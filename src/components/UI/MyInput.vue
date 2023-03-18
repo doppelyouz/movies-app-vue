@@ -1,83 +1,152 @@
 <template>
-  <div class="form-row">
-    <input id="input" required autocomplete="off" :value="modelValue" @input="updateInput"><label for="input"><slot></slot></label>
+  <div class="group">
+    <input type="text" required>
+    <span class="highlight"></span>
+    <span class="bar"></span>
+    <label>
+      <slot></slot>
+    </label>
   </div>
 </template>
 <script>
-  export default {
-    name: 'my-input',
-    props: {
-      modelValue: [String, Number]
-    },
-    methods: {
-      updateInput(event) {
-        this.$emit('update:modelValue', event.target.value)
-      }
+export default {
+  name: 'my-input',
+  props: {
+    modelValue: [String, Number]
+  },
+  methods: {
+    updateInput(event) {
+      this.$emit('update:modelValue', event.target.value)
     }
   }
+}
 </script>
 <style scoped>
-  * {
-    box-sizing: border-box;
+.group {
+  position: relative;
+  margin-bottom: 45px;
+  background-color: transparent;
+}
+
+input {
+  background: transparent;
+  font-size: 18px;
+  padding: 10px 10px 10px 5px;
+  display: block;
+  width: 100%;
+  border: none;
+  color:white;
+  border-bottom: 1px solid #757575;
+}
+
+input:focus {
+  outline: none;
+}
+
+/* LABEL ======================================= */
+label {
+  color: #999;
+  font-size: 18px;
+  font-weight: normal;
+  position: absolute;
+  pointer-events: none;
+  left: 5px;
+  top: 10px;
+  transition: 0.2s ease all;
+  -moz-transition: 0.2s ease all;
+  -webkit-transition: 0.2s ease all;
+}
+
+/* active state */
+input:focus~label,
+input:valid~label {
+  top: -20px;
+  font-size: 20px;
+  color: #3f2624;
+}
+
+/* BOTTOM BARS ================================= */
+.bar {
+  position: relative;
+  display: block;
+  width: 100%;
+}
+
+.bar:before,
+.bar:after {
+  content: '';
+  height: 2px;
+  width: 0;
+  bottom: 1px;
+  position: absolute;
+  background: #3f2624;
+  transition: 0.2s ease all;
+  -moz-transition: 0.2s ease all;
+  -webkit-transition: 0.2s ease all;
+}
+
+.bar:before {
+  left: 50%;
+}
+
+.bar:after {
+  right: 50%;
+}
+
+/* active state */
+input:focus~.bar:before,
+input:focus~.bar:after {
+  width: 50%;
+}
+
+/* HIGHLIGHTER ================================== */
+.highlight {
+  position: absolute;
+  height: 60%;
+  width: 100px;
+  top: 25%;
+  left: 0;
+  pointer-events: none;
+  opacity: 0.5;
+}
+
+/* active state */
+input:focus~.highlight {
+  -webkit-animation: inputHighlighter 0.3s ease;
+  -moz-animation: inputHighlighter 0.3s ease;
+  animation: inputHighlighter 0.3s ease;
+}
+
+/* ANIMATIONS ================ */
+@-webkit-keyframes inputHighlighter {
+  from {
+    background: #5264AE;
   }
 
-  .form-row {
-    position: relative;
-    margin-bottom: 40px;
+  to {
+    width: 0;
+    background: transparent;
+  }
+}
+
+@-moz-keyframes inputHighlighter {
+  from {
+    background: #5264AE;
   }
 
-  .form-row input {
-    display: block;
-    width: 100%;
-    padding: 0 10px;
-    line-height: 40px;
-    font-family: 'Roboto', sans-serif;
-    background: none;
-    border-width: 0;
-    border-bottom: 2px solid white;
-    transition: all 0.4s ease;
-                color:whitesmoke;
+  to {
+    width: 0;
+    background: transparent;
+  }
+}
+
+@keyframes inputHighlighter {
+  from {
+    background: #5264AE;
   }
 
-  .form-row label {
-    position: absolute;
-    left: 13px;
-    color: white;
-    font-size: 20px;
-    font-weight: 300;
-    transform: translateY(-35px);
-    transition: all 0.2s ease;
+  to {
+    width: 0;
+    background: transparent;
   }
-
-  .form-row input:focus {
-    outline: 0;
-    border-color: white;
-    color: white;
-  }
-
-  .form-row input:focus+label,
-  .form-row input:valid+label {
-    transform: translateY(-60px);
-    margin-left: -14px;
-    font-size: 14px;
-    font-weight: 400;
-    outline: 0;
-    border-color: #F77A52;
-    color: white;
-  }
-
-  .ui-form input[type="submit"] {
-    width: 100%;
-    padding: 0;
-    line-height: 42px;
-    background: #4a90e2;
-    border-width: 0;
-    color: white;
-    font-size: 20px;
-  }
-
-  .ui-form p {
-    margin: 0;
-    padding-top: 10px;
-  }
-</style>
+}</style>
