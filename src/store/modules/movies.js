@@ -21,14 +21,14 @@ const mutations = {
 };
 
 const actions = {
-    getMovies(context, apiUrl) {
-        context.commit(mutations.getMoviesStart);
-        moviesApi.getMovies(apiUrl)
+    getMovies(context) {
+        context.commit('getMoviesStart');
+        moviesApi.getMovies()
             .then((response) => {
-                context.commit(mutations.getMoviesSuccess, response.data);
+                context.commit('getMoviesSuccess', response.data);
             })
             .catch(() => {
-                context.commit(mutations.getMoviesFailure);
+                context.commit('getMoviesFailure');
             });
     }
 };

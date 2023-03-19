@@ -1,6 +1,6 @@
 <template>
   <div class="group">
-    <input type="text" required>
+    <input required :value="modelValue" @input="updateInput" :type="type">
     <span class="highlight"></span>
     <span class="bar"></span>
     <label>
@@ -12,7 +12,11 @@
 export default {
   name: 'my-input',
   props: {
-    modelValue: [String, Number]
+    modelValue: [String, Number],
+    type: {
+      type: String, 
+      default: "text"
+    }
   },
   methods: {
     updateInput(event) {

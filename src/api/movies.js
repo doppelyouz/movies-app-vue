@@ -1,7 +1,7 @@
 import axios from "./axios";
 
-const getMovies = apiUrl => {
-    return axios.get(apiUrl);
+const getMovies = () => {
+    return axios.get('/movies');
 }
 
 export default {

@@ -3,7 +3,7 @@
         <Topbar />
         <div class="login"> 
             <form class="loginForm" @submit.prevent="onSubmit">
-                <h1 class="loginForm__title">Вход</h1>
+                <h1 class="loginForm__title">Sign In</h1>
                 <div class="loginForm__inputBlock">
                     <my-input type="text" v-model="email">Email: </my-input>
                 </div>
@@ -17,7 +17,9 @@
     </div>
 </template>
 <script>
+  import { mapState } from 'vuex';
   import Topbar from '@/components/Topbar.vue';
+  
   export default {
     name: 'AppLogin',
     components: {
@@ -30,24 +32,33 @@
         }
     },
     computed: {
+        ...mapState({
+            users: state => state.auth.users
+        }),
         isSubmitting() {
             return this.$store.state.auth.isSubmitting
         }
     },
+    mounted() {
+        this.fetchUsers();
+    },
     methods: {
         onSubmit() {
-            this.$store
-                .dispatch('login', {
-                    email: this.email,
-                    password: this.password,
-                })
-                .then(() => {
-                    this.password = '';
-                    this.email = '';
-                    this.$router.push({ name: 'home' });
-                });
+                this.$store
+                    .dispatch('login', {
+                        email: this.email,
+                        password: this.password
+                    })
+                    .then(() => {
+                        this.password = '';
+                        this.email = '';
+                        this.$router.push({name: 'home'})
+                    });
         },
-    }
+        fetchUsers() {
+            this.$store.dispatch('getAllUsers')
+        }
+    },
   };
 </script>
 <style lang="scss" scoped>

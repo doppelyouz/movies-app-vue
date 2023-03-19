@@ -3,8 +3,7 @@ import authApi from "@/api/auth";
 const state = {
     isSubmitting: false,
     isLoading: false,
-    currentUser: null,
-    isLoggedIn: null,
+    currentUser: JSON.parse(localStorage.getItem("user" ) || 'null'),
     users: null
   };
   
@@ -15,7 +14,6 @@ const mutations = {
     registerSuccess(state, payload) {
       state.isSubmitting = false;
       state.currentUser = payload;
-      state.isLoggedIn = true;
     },
     registerFailure(state) {
       state.isSubmitting = false;
@@ -26,7 +24,6 @@ const mutations = {
     loginSuccess(state, payload) {
       state.isSubmitting = false;
       state.currentUser = payload;
-      state.isLoggedIn = true;
     },
     loginFailure(state) {
       state.isSubmitting = false;
@@ -37,11 +34,9 @@ const mutations = {
     getCurrentUserSuccess(state, payload) {
       state.isLoading = false;
       state.currentUser = payload;
-      state.isLoggedIn = true;
     },
     getCurrentUserFailure(state) {
       state.isLoading = false;
-      state.isLoggedIn = false;
       state.currentUser = null;
     },
     getAllUsersStart(state) {
@@ -54,27 +49,18 @@ const mutations = {
     },
     getAllUsersFailure(state) {
       state.isLoading = false;
-      state.isLoggedIn = false;
       state.currentUser = null;
       state.users = null;
     },
   };
   
-  
-  const getters = { 
-    currentUser: state => state.currentUser,
-    isLoggedIn: state => Boolean(state.isLoggedIn),
-    isAnonymous: state => state.isLoggedIn === false
-  }
-  
   const actions = {
     register(context, credentials) {
-      console.log(credentials);
         context.commit("registerStart");
         authApi
           .register(credentials)
           .then((response) => {
-            context.commit("registerSuccess", response.data.user);
+            context.commit("registerSuccess", response.data);
           })
           .catch(() => {
             context.commit("registerFailure");
@@ -82,14 +68,13 @@ const mutations = {
     },
     login(context, credentials) {
         context.commit("loginStart");
-        authApi
-          .login(credentials)
-          .then((response) => {
-            context.commit("loginSuccess", response.data.user);
-          })
-          .catch(() => {
-            context.commit("loginFailure");
-          });
+        const user = state.users.find(user => ((user.email == credentials.email) && (user.password == credentials.password)))
+        if(user) {
+            context.commit("loginSuccess", user);
+            localStorage.setItem("user",JSON.stringify(user));
+        } else {
+          context.commit("loginFailure");
+        }
     },
     getCurrentUser(context) {
         context.commit("getCurrentUserStart");
@@ -105,7 +90,7 @@ const mutations = {
     getAllUsers(context) {
       context.commit("getAllUsersStart");
       authApi
-        .getCurrentUser()
+        .getUsers()
         .then((response) => {
           context.commit("getAllUsersSuccess", response.data);
         })
@@ -119,5 +104,4 @@ const mutations = {
     state,
     mutations,
     actions,
-    getters
   };

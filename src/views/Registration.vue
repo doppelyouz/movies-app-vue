@@ -3,18 +3,18 @@
         <Topbar />
         <div class="register">
             <form class="registerForm" @submit.prevent="onSubmit">
-                <h1 class="registerForm__title">Регистрация</h1>
+                <h1 class="registerForm__title">Register</h1>
                 <div class="registerForm__inputBlock">
-                    <my-input type="text" v-model="username">Username: </my-input>
+                    <my-input v-model="username">Username: </my-input>
                 </div>
                 <div class="registerForm__inputBlock">
-                    <my-input type="text" v-model="email">Email: </my-input>
+                    <my-input v-model="email">Email: </my-input>
                 </div>
                 <div class="registerForm__inputBlock">
-                    <my-input type="password" v-model="password">Password: </my-input>
+                    <my-input :type="'password'" v-model="password">Password: </my-input>
                 </div>
                 <div class="registerForm__inputBlock">
-                    <my-input type="password" v-model="confirm">Confirm Password: </my-input>
+                    <my-input :type="'password'" v-model="confirm">Confirm Password: </my-input>
                 </div>
                 <my-button :disabled="isSubmitting">Зарегистрироваться</my-button>
                 <div class="haveAcc"><router-link :to="{name: 'login'}">Do you have an account?</router-link></div>
@@ -45,12 +45,13 @@ export default {
     },
     methods: {
         onSubmit() {
-            if(this.confirm === this.password) {
+            console.log('start');
+            if(this.confirm == this.password) {
                 const user = {
-                    id: `id${Date.now()}`,
                     username: this.username,
                     email: this.email,
-                    password: this.password
+                    password: this.password,
+                    avatar: "https://sbcf.fr/wp-content/uploads/2018/03/sbcf-default-avatar.png"
                 };
 
                 this.$store.dispatch('register', user)

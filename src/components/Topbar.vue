@@ -2,30 +2,46 @@
     <div class="topbar">
         <ul class="topbar__menu">
             <li class="topbar__logo"><img :src="logo" alt="logo"></li>
-            <li>Movies</li>
-            <li>Tickets</li>
+            <li><router-link :to="{name: 'home'}">Movies</router-link></li>
+            <li v-if="currentUser">Tickets</li>
             <li>News & Popular</li>
         </ul>
-        <div class="topbar__profile">
-            <div class="topbar__profile-logo">
-                <img :src="logo" alt="">
+        <template v-if="currentUser">
+            <div class="topbar__profile">
+                <div class="topbar__profile-logo">
+                    <img :src="currentUser.avatar" alt="">
+                </div>
+                <div class="topbar__profile-username">
+                    {{currentUser.username}}
+                </div>
             </div>
-            <div class="topbar__profile-username">
-                Username
-            </div>
-        </div>
+        </template>
+        <template v-else>
+                <div class="register__buttons">
+                    <my-button><router-link :to="{name: 'login'}">Sign In</router-link></my-button>
+                </div>
+        </template>
     </div>
 </template>
 <script>
-import logo from '../assets/netflix.png';
+    import logo from '../assets/netflix.png';
+    import { mapState } from 'vuex';
+
    export default {
        name: 'AppTopbar',
        data() {
         return {
             logo,
         }
-       }
-   };
+       },
+       computed: {
+            ...mapState({
+                currentUser: state => state.auth.currentUser,
+                isLoggedIn: state => state.auth.isLoggedIn,
+                isAnonymous: state => state.auth.isAnonymous
+            })
+        },
+  }
 </script>
 <style lang="scss" scoped>
     .topbar {
@@ -58,8 +74,8 @@ import logo from '../assets/netflix.png';
             .topbar__profile-logo {
                 min-height: 50px;
                 width: 50px;
-                border-radius: 50%;
                 img {
+                    border-radius: 50%;
                     object-fit: cover;
                     width: 100%;
                 }
@@ -68,6 +84,12 @@ import logo from '../assets/netflix.png';
                 color: white;
                 font-size: 20px;
             }
+        }
+        .register__buttons {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 20px;
         }
     }
 </style>
