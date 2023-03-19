@@ -1,6 +1,5 @@
 {
-  "users": [
-    {
+  "users": [{
       "username": "1",
       "email": "1",
       "password": "1",
@@ -15,8 +14,7 @@
       "id": 4
     }
   ],
-  "movies": [
-    {
+  "movies": [{
       "id": 1,
       "image": "https://thumbs.dfs.ivi.ru/storage5/contents/d/c/6753ef87d20b19d6e27d05d5fb0dd7.jpg",
       "name": "Последний богатырь",
@@ -39,46 +37,45 @@
     },
     {
       "id": 4,
-      "image": "https://thumbs.dfs.ivi.ru/storage5/contents/d/c/6753ef87d20b19d6e27d05d5fb0dd7.jpg",
-      "name": "Последний богатырь",
-      "description": "Избушка на курьих ножках посреди Москвы. Кощей и Колобок на мотоцикле. Жар-птица с лицом эстрадной звезды. Что происходит? Сказочное Белогорье врывается в наш мир в третьей части весёлого и зрелищного фэнтези для всей семьи. Зрителей ждёт новое масштабное приключение в компании Виктора Хориняка, Константина Лавроненко, Сергея Бурунова, Тимофея Трибунцева и других звёзд российского кино.",
-      "rating": 8.4
+      "image": "https://img.championat.com/i/u/c/1617357710861678005.jpg",
+      "name": "Mortal Kombat",
+      "description": "There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text. All the Lorem Ipsum generators on the Internet tend to repeat predefined chunks as necessary.",
+      "rating": 9.1
     },
     {
       "id": 5,
-      "image": "https://thumbs.dfs.ivi.ru/storage8/contents/c/f/37a2cbe0d637b9e53ec5743f4fbb28.jpg",
-      "name": "Супер агенты",
-      "description": "Обычный парень со странным прозвищем Матильда мечтает стать секретным агентом. Однажды он получает своё первое важное задание: ему предстоит вернуть сбежавшую дочь генпрокурора из Дубая. Удастся ли герою справиться с миссией?",
+      "image": "https://s5.afisha.ru/mediastorage/37/3b/aa04c6f9190c43d5a895d8ed3b37.jpg",
+      "name": "Все везде и сразу",
+      "description": "There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text. All the Lorem Ipsum generators on the Internet tend to repeat predefined chunks as necessary.",
       "rating": 7.1
     },
     {
       "id": 6,
-      "image": "https://thumbs.dfs.ivi.ru/storage26/contents/5/c/21c7c18bfe111e6e0ab01b43121f2c.jpg",
-      "name": "Либерея",
-      "description": "Трио авантюристов отправляются в путешествие по всей России на поиски легендарной библиотеки Ивана Грозного. Чтобы совершить находку века, им нужно разгадать россыпь загадок и переиграть коварных конкурентов. Захватывающий приключенческий квест с лихим экшеном, юмором, необычными локациями и звёздной актёрской командой: Тихон Жизневский, Алексей Серебряков и Диана Пожарская vs Артём Ткаченко.",
-      "rating": 6.9
-    }
-    ,
+      "image": "https://upload.wikimedia.org/wikipedia/ru/d/de/Old_film_poster.jpg",
+      "name": "Время",
+      "description": "There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text. All the Lorem Ipsum generators on the Internet tend to repeat predefined chunks as necessary.",
+      "rating": 9.3
+    },
     {
       "id": 7,
-      "image": "https://thumbs.dfs.ivi.ru/storage5/contents/d/c/6753ef87d20b19d6e27d05d5fb0dd7.jpg",
-      "name": "Последний богатырь",
-      "description": "Избушка на курьих ножках посреди Москвы. Кощей и Колобок на мотоцикле. Жар-птица с лицом эстрадной звезды. Что происходит? Сказочное Белогорье врывается в наш мир в третьей части весёлого и зрелищного фэнтези для всей семьи. Зрителей ждёт новое масштабное приключение в компании Виктора Хориняка, Константина Лавроненко, Сергея Бурунова, Тимофея Трибунцева и других звёзд российского кино.",
-      "rating": 8.4
+      "image": "https://thumbs.dfs.ivi.ru/storage29/contents/c/4/f3b4f712ab844ed3349bc9dede0e40.jpg",
+      "name": "Дора",
+      "description": "There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text. All the Lorem Ipsum generators on the Internet tend to repeat predefined chunks as necessary.",
+      "rating": 7.9
     },
     {
       "id": 8,
-      "image": "https://thumbs.dfs.ivi.ru/storage8/contents/c/f/37a2cbe0d637b9e53ec5743f4fbb28.jpg",
-      "name": "Супер агенты",
-      "description": "Обычный парень со странным прозвищем Матильда мечтает стать секретным агентом. Однажды он получает своё первое важное задание: ему предстоит вернуть сбежавшую дочь генпрокурора из Дубая. Удастся ли герою справиться с миссией?",
-      "rating": 7.1
+      "image": "https://thumbs.dfs.ivi.ru/storage15/contents/6/6/212609fbd50411bd32be5afce47c1b.jpg",
+      "name": "Домовой",
+      "description": "There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text. All the Lorem Ipsum generators on the Internet tend to repeat predefined chunks as necessary.",
+      "rating": 6.6
     },
     {
       "id": 9,
-      "image": "https://thumbs.dfs.ivi.ru/storage26/contents/5/c/21c7c18bfe111e6e0ab01b43121f2c.jpg",
-      "name": "Либерея",
+      "image": "https://images.kinomax.ru/550/films/6/6709/p_56a07a1.jpg",
+      "name": "Аватар",
       "description": "Трио авантюристов отправляются в путешествие по всей России на поиски легендарной библиотеки Ивана Грозного. Чтобы совершить находку века, им нужно разгадать россыпь загадок и переиграть коварных конкурентов. Захватывающий приключенческий квест с лихим экшеном, юмором, необычными локациями и звёздной актёрской командой: Тихон Жизневский, Алексей Серебряков и Диана Пожарская vs Артём Ткаченко.",
-      "rating": 6.9
+      "rating": 8.3
     }
   ]
 }
