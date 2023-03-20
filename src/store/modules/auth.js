@@ -4,7 +4,8 @@ const state = {
     isSubmitting: false,
     isLoading: false,
     currentUser: JSON.parse(localStorage.getItem("user" ) || 'null'),
-    users: null
+    users: null,
+    user: null
   };
   
 const mutations = {
@@ -18,6 +19,7 @@ const mutations = {
     registerFailure(state) {
       state.isSubmitting = false;
     },
+    
     loginStart(state) {
       state.isSubmitting = true;
     },
@@ -28,17 +30,19 @@ const mutations = {
     loginFailure(state) {
       state.isSubmitting = false;
     },
-    getCurrentUserStart(state) {
+
+    getUserStart(state) {
       state.isLoading = true;
     },
-    getCurrentUserSuccess(state, payload) {
+    getUserSuccess(state, payload) {
       state.isLoading = false;
-      state.currentUser = payload;
+      state.user = payload;
     },
-    getCurrentUserFailure(state) {
+    getUserFailure(state) {
       state.isLoading = false;
-      state.currentUser = null;
+      state.user = null;
     },
+
     getAllUsersStart(state) {
       state.users = null;
       state.isLoading = true;
@@ -52,6 +56,22 @@ const mutations = {
       state.currentUser = null;
       state.users = null;
     },
+
+    changeUserStart(state) {
+      state.isLoading = true;
+    },
+    changeUserSuccess(state, payload) {
+      state.isLoading = false;
+      state.currentUser = payload;
+    },
+    changeUserFailure(state) {
+      state.user = null;
+      state.isLoading = false;
+    },
+
+    logOut(state) {
+      state.currentUser = null;
+    }
   };
   
   const actions = {
@@ -76,28 +96,44 @@ const mutations = {
           context.commit("loginFailure");
         }
     },
-    getCurrentUser(context) {
-        context.commit("getCurrentUserStart");
+    getUser(context, id) {
+        context.commit("getUserStart");
         authApi
-          .getCurrentUser()
+          .getUser(id)
           .then((response) => {
-            context.commit("getCurrentUserSuccess", response.data.user);
+            context.commit("getUserSuccess", response.data);
           })
           .catch(() => {
-            context.commit("getCurrentUserFailure");
+            context.commit("getUserFailure");
           });
     },
     getAllUsers(context) {
       context.commit("getAllUsersStart");
       authApi
-        .getUsers()
-        .then((response) => {
-          context.commit("getAllUsersSuccess", response.data);
-        })
-        .catch(() => {
-          context.commit("getAllUsersFailure");
-        });
-  },
+          .getUsers()
+          .then((response) => {
+            context.commit("getAllUsersSuccess", response.data);
+          })
+          .catch(() => {
+            context.commit("getAllUsersFailure");
+          });
+    },
+    changeUser(context, newUser) {
+      context.commit("changeUserStart");
+      authApi
+          .changeUser(newUser)
+          .then(() => {
+            context.commit("changeUserSuccess", newUser);
+            localStorage.setItem("user", JSON.stringify(newUser));
+          })
+          .catch(() => {
+            context.commit("changeUserFailure");
+          });
+    },
+    logOut(context) {
+        context.commit("logOut");
+        localStorage.removeItem('user');
+    }
   };
   
   export default {

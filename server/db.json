@@ -1,20 +1,29 @@
 {
-  "users": [{
-      "username": "1",
-      "email": "1",
+  "users": [
+    {
+      "username": "11111111111111111111111111111",
+      "email": "111111111111",
       "password": "1",
-      "avatar": "https://sbcf.fr/wp-content/uploads/2018/03/sbcf-default-avatar.png",
+      "avatar": "https://static-cse.canva.com/blob/846900/photo1502082553048f009c37129b9e1583341920812.jpeg",
       "id": 3
     },
     {
-      "username": "2",
-      "email": "2",
+      "username": "22222",
+      "email": "22222",
       "password": "2",
       "avatar": "https://sbcf.fr/wp-content/uploads/2018/03/sbcf-default-avatar.png",
       "id": 4
+    },
+    {
+      "username": "3",
+      "email": "3",
+      "password": "3",
+      "avatar": "https://sbcf.fr/wp-content/uploads/2018/03/sbcf-default-avatar.png",
+      "id": 5
     }
   ],
-  "movies": [{
+  "movies": [
+    {
       "id": 1,
       "image": "https://thumbs.dfs.ivi.ru/storage5/contents/d/c/6753ef87d20b19d6e27d05d5fb0dd7.jpg",
       "name": "Последний богатырь",
