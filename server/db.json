@@ -1,25 +1,28 @@
 {
   "users": [
     {
-      "username": "11111111111111111111111111111",
-      "email": "111111111111",
-      "password": "1",
-      "avatar": "https://static-cse.canva.com/blob/846900/photo1502082553048f009c37129b9e1583341920812.jpeg",
-      "id": 3
-    },
-    {
-      "username": "22222",
-      "email": "22222",
-      "password": "2",
-      "avatar": "https://sbcf.fr/wp-content/uploads/2018/03/sbcf-default-avatar.png",
-      "id": 4
-    },
-    {
       "username": "3",
       "email": "3",
       "password": "3",
       "avatar": "https://sbcf.fr/wp-content/uploads/2018/03/sbcf-default-avatar.png",
-      "id": 5
+      "tickets": [
+        6,
+        4
+      ],
+      "id": 1
+    },
+    {
+      "username": "2",
+      "email": "2",
+      "password": "2",
+      "avatar": "https://sbcf.fr/wp-content/uploads/2018/03/sbcf-default-avatar.png",
+      "tickets": [
+        9,
+        8,
+        7,
+        4
+      ],
+      "id": 2
     }
   ],
   "movies": [

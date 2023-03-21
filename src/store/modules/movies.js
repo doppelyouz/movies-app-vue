@@ -30,7 +30,7 @@ const actions = {
             .catch(() => {
                 context.commit('getMoviesFailure');
             });
-    }
+    },
 };
 export default {
     state,

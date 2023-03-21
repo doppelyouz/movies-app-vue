@@ -45,13 +45,13 @@ export default {
     },
     methods: {
         onSubmit() {
-            console.log('start');
             if(this.confirm == this.password) {
                 const user = {
                     username: this.username,
                     email: this.email,
                     password: this.password,
-                    avatar: "https://sbcf.fr/wp-content/uploads/2018/03/sbcf-default-avatar.png"
+                    avatar: "https://sbcf.fr/wp-content/uploads/2018/03/sbcf-default-avatar.png",
+                    tickets: []
                 };
 
                 this.$store.dispatch('register', user)

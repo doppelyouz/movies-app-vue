@@ -1,7 +1,9 @@
 <template>
   <div class="profile">
-    <Loading v-if="isLoading" />
-    <ErrorMessage v-if="error" />
+    <Loading v-if="isLoadingAuth" />
+    <ErrorMessage v-if="errorAuth" />
+    <Loading v-if="isLoadingMovies" />
+    <ErrorMessage v-if="errorMovies" />
     <div class="profile__data" v-if="user">
       <div class="profile__bio">
         <div class="profile__avatar">
@@ -25,12 +27,16 @@
         </div>
       </div>
     </div>
+    <div class="tickets" v-if="yourTickets">
+      <Movie v-for="ticket in yourTickets" :key="ticket.id" :movie="ticket" :buy="false"/>
+    </div>
   </div>
 </template>
   <script>
 import { mapState } from "vuex";
 import Loading from "../components/Loading.vue";
 import ErrorMessage from "@/components/ErrorMessage.vue";
+import Movie from "@/components/Movie.vue";
 
 export default {
   name: "AppUser",
@@ -43,26 +49,45 @@ export default {
   components: {
     Loading,
     ErrorMessage,
+    Movie
   },
   computed: {
     ...mapState({
-      isLoading: (state) => state.auth.isLoading,
+      isLoadingAuth: (state) => state.auth.isLoading,
+      errorAuth: (state) => state.auth.error,
+      isLoadingMovies: (state) => state.movies.isLoading,
+      errorMovies: (state) => state.movies.error,
       user: (state) => state.auth.user,
-      error: (state) => state.auth.error,
       currentUser: (state) => state.auth.currentUser,
+      movies: (state) => state.movies.data,
     }),
+    yourTickets() {
+      let tickets = [];
+      this.movies?.forEach((movie) => {
+        this.user?.tickets?.forEach((userTicket) => {
+          if (userTicket === movie.id) {
+            tickets.push(movie);
+          }
+        });
+      });
+      return tickets;
+    },
   },
   mounted() {
     this.fetchUser();
+    this.fetchMovies();
   },
   methods: {
     fetchUser() {
       this.$store.dispatch("getUser", this.id);
     },
+    fetchMovies() {
+      this.$store.dispatch("getMovies");
+    },
     logOut() {
       this.$store.dispatch("logOut");
-      this.$router.push({name:'home'});
-    }
+      this.$router.push({ name: "home" });
+    },
   },
 };
 </script>
@@ -80,6 +105,7 @@ export default {
       align-items: start;
       justify-content: space-between;
       gap: 20px;
+      margin-bottom: 55px;
       .profile__avatar {
         height: 300px;
         max-width: 300px;
@@ -115,6 +141,15 @@ export default {
         gap: 20px;
       }
     }
+  }
+  .tickets {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr;
+    gap: 40px;
+    border-radius: 25px;
+    padding: 35px;
+    background: rgb(70, 50, 50);
   }
 }
 </style>

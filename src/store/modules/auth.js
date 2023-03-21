@@ -12,9 +12,8 @@ const mutations = {
     registerStart(state) {
       state.isSubmitting = true;
     },
-    registerSuccess(state, payload) {
+    registerSuccess(state) {
       state.isSubmitting = false;
-      state.currentUser = payload;
     },
     registerFailure(state) {
       state.isSubmitting = false;

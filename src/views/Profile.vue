@@ -1,7 +1,7 @@
 <template>
     <div>
         <Topbar />
-        <User :id="currentUser.id"/>
+        <User :id="currentUser?.id"/>
     </div>
 </template>
 <script>
