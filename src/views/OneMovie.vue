@@ -14,7 +14,10 @@
         <p class="movie__desc">
           {{ movie?.description }}
         </p>
-        <star-rating v-bind:max-rating="10" inactive-color="white" active-color="yellow" v-bind:star-size="50" :read-only="true" :rating="movie?.rating" class="rating" :increment="0.1" />
+        <form @submit.prevent="onRating" class="onRating">
+            <star-rating @update:rating="setRating" v-bind:max-rating="10" inactive-color="white" active-color="yellow" v-bind:star-size="50" :rating="movie?.rating" class="rating" :increment="0.1" />
+            <my-button v-if="currentUser">Сохранить</my-button>
+          </form>
         <div class="movie__comments">
           <div class="comments" v-if="movie?.comments">
             <div v-for="comment in movie?.comments" class="comment" :key="comment">
@@ -65,6 +68,7 @@
     data() {
       return {
         comment: "",
+        rating: 0
       };
     },
     computed: {
@@ -98,6 +102,18 @@
           this.comment = "";
         }
       },
+      setRating(rating){
+        this.rating = rating;
+      },
+      onRating() {
+        if(this.rating > 0) {
+          this.$store.dispatch("changeMovie", {
+            ...this.movie,
+            rating: this.movie?.rating === 0 ? Number(this.rating) : Number(((this.movie?.rating + this.rating) / 2).toFixed(1))
+          });
+          this.rating = 0;
+        }
+      }
     },
     mounted() {
       this.fetchMovie();
@@ -145,7 +161,10 @@
         font-size: 45px;
         color: white;
       }
-      
+      .onRating {
+        display: flex;
+        gap: 20px;
+      }
     .movie__comments {
       .comment__title {
         font-size: 24px;

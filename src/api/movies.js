@@ -8,12 +8,12 @@ const getMovieById = (id) => {
     return axios.get(`/movies/${id}`);
 }
 
-const leaveСomment = (movie) => {
+const changeMovie = (movie) => {
     return axios.put(`/movies/${movie.id}`, movie);
 }
 
 export default {
     getMovies,
     getMovieById,
-    leaveСomment
+    changeMovie
 };

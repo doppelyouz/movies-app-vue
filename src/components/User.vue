@@ -7,19 +7,19 @@
     <div class="profile__data" v-if="user">
       <div class="profile__bio">
         <div class="profile__avatar">
-          <img :src="user.avatar" />
+          <img :src="user?.avatar" />
         </div>
         <div class="profile__personalData">
           <div class="profile__name">
             <div>Username:</div>
-            <h2>{{ user.username }}</h2>
+            <h2>{{ user?.username }}</h2>
           </div>
           <div class="profile__email">
             <div>Email:</div>
-            <h2 class="profile__email">{{ user.email }}</h2>
+            <h2 class="profile__email">{{ user?.email }}</h2>
           </div>
         </div>
-        <div class="profile__settings" v-if="currentUser.id === user.id">
+        <div class="profile__settings" v-if="currentUser?.id === user?.id">
           <router-link :to="{ name: 'settings' }"
             ><my-button>Settings</my-button></router-link
           >
@@ -28,7 +28,7 @@
       </div>
     </div>
     <div class="tickets" v-if="yourTickets.length > 0 ">
-      <Movie v-for="ticket in yourTickets" :key="ticket.id" :movie="ticket" :buy="false"/>
+      <Movie v-for="ticket in yourTickets" :key="ticket.id" :movie="ticket" :buy="false" :userPage="true" />
     </div>
   </div>
 </template>
@@ -44,7 +44,7 @@ export default {
     id: {
       type: Number,
       required: true,
-    },
+    }
   },
   components: {
     Loading,
@@ -104,12 +104,11 @@ export default {
     .profile__bio {
       display: flex;
       align-items: start;
-      justify-content: space-between;
       gap: 20px;
       margin-bottom: 55px;
       .profile__avatar {
         height: 300px;
-        max-width: 300px;
+        min-width: 300px;
         img {
           border-radius: 20px;
           object-fit: cover;

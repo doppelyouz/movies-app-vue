@@ -34,14 +34,14 @@ const mutations = {
     },
 
     
-    leaveСommentStart(state) {
+    changeMovieStart(state) {
         state.isLoading = true;
     },
-    leaveСommentSuccess(state, payload) {
+    changeMovieSuccess(state, payload) {
         state.isLoading = false;
         state.movie = payload;
     },
-    leaveСommentFailure(state) {
+    changeMovieFailure(state) {
         state.isLoading = false;
     }
 };
@@ -67,14 +67,14 @@ const actions = {
                 context.commit('getMovieByIdFailure');
             });
     },
-    leaveСomment(context, movie) {
-        context.commit('leaveСommentStart');
-        moviesApi.leaveСomment(movie)
+    changeMovie(context, movie) {
+        context.commit('changeMovieStart');
+        moviesApi.changeMovie(movie)
             .then(() => {
-                context.commit('leaveСommentSuccess', movie);
+                context.commit('changeMovieSuccess', movie);
             })
             .catch(() => {
-                context.commit('leaveСommentFailure');
+                context.commit('changeMovieFailure');
             });
     },
 };

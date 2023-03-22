@@ -21,12 +21,14 @@
         />
     </div>
     <template v-if="currentUser">
-    <form class="movie__buyOrSellTicket" @submit.prevent="onBuy" v-if="buy">
-      <my-button :disabled="isSubmitting" v-if="buy">Buy ticket</my-button>
-    </form>
-    <form class="movie__buyOrSellTicket" @submit.prevent="onSell" v-else>
-      <my-button :disabled="isSubmitting">Sell ticket</my-button>
-    </form>
+      <template v-if="!userPage || (currentUser?.id === user?.id)">
+        <form class="movie__buyOrSellTicket" @submit.prevent="onBuy" v-if="buy">
+          <my-button :disabled="isSubmitting" v-if="buy">Buy ticket</my-button>
+        </form>
+        <form class="movie__buyOrSellTicket" @submit.prevent="onSell" v-else>
+          <my-button :disabled="isSubmitting">Sell ticket</my-button>
+        </form>
+      </template>
     </template>
   </div>
 </template>
@@ -46,6 +48,11 @@ import StarRating from "vue-star-rating";
         type: Boolean,
         required: false,
         default: true
+      },
+      userPage: {
+        type: Boolean,
+        required: false,
+        default: false
       }
     },
     components: {
@@ -54,6 +61,7 @@ import StarRating from "vue-star-rating";
     computed: {
       ...mapState({
         currentUser: (state) => state.auth.currentUser,
+        user: (state) => state.auth.user,
       }),
       isSubmitting() {
         return this.$store.state.auth.isSubmitting;
@@ -63,7 +71,7 @@ import StarRating from "vue-star-rating";
       onBuy() {
         this.$store.dispatch("changeUser", {
           ...this.currentUser,
-          tickets: [...this.currentUser?.tickets, this.movie.id],
+          tickets: [...this.currentUser?.tickets, this.movie?.id],
         });
       },
       onSell() {
