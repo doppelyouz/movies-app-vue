@@ -7,6 +7,7 @@ import Profile from '../views/Profile'
 import Settings from '../views/Settings'
 import UserPage from '../views/UserPage'
 import OneMovie from '../views/OneMovie'
+import AddMovie from '../views/AddMovie'
 
 const routes = [
   {
@@ -44,7 +45,11 @@ const routes = [
     name: 'movie',
     component: OneMovie
   },
-  
+  {
+    path: '/add',
+    name: 'add',
+    component: AddMovie
+  },
   { path:  "/:catchAll(.*)", component: Netflix }
 ]
 

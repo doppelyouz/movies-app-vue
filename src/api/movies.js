@@ -12,8 +12,13 @@ const changeMovie = (movie) => {
     return axios.put(`/movies/${movie.id}`, movie);
 }
 
+const createMovie = (movie) => {
+    return axios.post(`/movies`, movie);
+}
+
 export default {
     getMovies,
     getMovieById,
-    changeMovie
+    changeMovie,
+    createMovie
 };

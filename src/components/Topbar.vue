@@ -3,8 +3,11 @@
     <ul class="topbar__menu">
       <li class="topbar__logo"><img :src="logo" alt="logo" /></li>
       <li><router-link :to="{ name: 'home' }">Movies</router-link></li>
-      <li v-if="currentUser">Tickets</li>
-      <li>News & Popular</li>
+      <li v-if="currentUser">
+        <router-link :to="{ name: 'add' }">
+          Add Movie
+        </router-link> 
+      </li>
     </ul>
     <template v-if="currentUser">
       <router-link :to="{ name: 'profile' }" class="topbar__profile">
