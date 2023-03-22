@@ -27,7 +27,7 @@
         </div>
       </div>
     </div>
-    <div class="tickets" v-if="yourTickets">
+    <div class="tickets" v-if="yourTickets.length > 0 ">
       <Movie v-for="ticket in yourTickets" :key="ticket.id" :movie="ticket" :buy="false"/>
     </div>
   </div>
@@ -97,7 +97,8 @@ export default {
   max-width: 1200px;
   width: 100%;
   background: rgb(104, 86, 86);
-  border-radius: 30px;
+  border-top-right-radius: 30px;
+  border-top-left-radius: 30px;
   padding: 40px;
   .profile__data {
     .profile__bio {
