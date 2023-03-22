@@ -21,11 +21,13 @@
       "id": 2
     },
     {
-      "username": "3",
+      "username": "3333333333333",
       "email": "3",
       "password": "3",
       "avatar": "https://s0.tchkcdn.com/g-mc6tg-noHZsP7M50PIm7nw/17/261238/540x540/r/0/afb_4a7c281_dyka_pryroda_buket.jpg",
-      "tickets": [],
+      "tickets": [
+        2
+      ],
       "id": 3
     }
   ],
@@ -35,7 +37,7 @@
       "image": "https://thumbs.dfs.ivi.ru/storage5/contents/d/c/6753ef87d20b19d6e27d05d5fb0dd7.jpg",
       "name": "Последний богатырь",
       "description": "Избушка на курьих ножках посреди Москвы. Кощей и Колобок на мотоцикле. Жар-птица с лицом эстрадной звезды. Что происходит? Сказочное Белогорье врывается в наш мир в третьей части весёлого и зрелищного фэнтези для всей семьи. Зрителей ждёт новое масштабное приключение в компании Виктора Хориняка, Константина Лавроненко, Сергея Бурунова, Тимофея Трибунцева и других звёзд российского кино.",
-      "rating": 8.4,
+      "rating": 7.2,
       "comments": []
     },
     {
@@ -43,21 +45,46 @@
       "image": "https://thumbs.dfs.ivi.ru/storage8/contents/c/f/37a2cbe0d637b9e53ec5743f4fbb28.jpg",
       "name": "Супер агенты",
       "description": "Обычный парень со странным прозвищем Матильда мечтает стать секретным агентом. Однажды он получает своё первое важное задание: ему предстоит вернуть сбежавшую дочь генпрокурора из Дубая. Удастся ли герою справиться с миссией?",
-      "rating": 7.1,
-      "comments": []
+      "rating": 0,
+      "comments": [
+        {
+          "user": {
+            "id": 3,
+            "username": "3",
+            "avatar": "https://s0.tchkcdn.com/g-mc6tg-noHZsP7M50PIm7nw/17/261238/540x540/r/0/afb_4a7c281_dyka_pryroda_buket.jpg"
+          },
+          "description": "321"
+        },
+        {
+          "user": {
+            "id": 3,
+            "username": "3",
+            "avatar": "https://s0.tchkcdn.com/g-mc6tg-noHZsP7M50PIm7nw/17/261238/540x540/r/0/afb_4a7c281_dyka_pryroda_buket.jpg"
+          },
+          "description": "афцу"
+        }
+      ]
     },
     {
       "id": 3,
       "image": "https://thumbs.dfs.ivi.ru/storage26/contents/5/c/21c7c18bfe111e6e0ab01b43121f2c.jpg",
       "name": "Либерея",
       "description": "Трио авантюристов отправляются в путешествие по всей России на поиски легендарной библиотеки Ивана Грозного. Чтобы совершить находку века, им нужно разгадать россыпь загадок и переиграть коварных конкурентов. Захватывающий приключенческий квест с лихим экшеном, юмором, необычными локациями и звёздной актёрской командой: Тихон Жизневский, Алексей Серебряков и Диана Пожарская vs Артём Ткаченко.",
-      "rating": 6.9,
+      "rating": 0,
       "comments": [
         {
           "user": {
             "id": 1,
             "username": "1",
             "avatar": "https://sbcf.fr/wp-content/uploads/2018/03/sbcf-default-avatar.png"
+          },
+          "description": "321"
+        },
+        {
+          "user": {
+            "id": 3,
+            "username": "3",
+            "avatar": "https://s0.tchkcdn.com/g-mc6tg-noHZsP7M50PIm7nw/17/261238/540x540/r/0/afb_4a7c281_dyka_pryroda_buket.jpg"
           },
           "description": "321"
         }
@@ -68,7 +95,7 @@
       "image": "https://img.championat.com/i/u/c/1617357710861678005.jpg",
       "name": "Mortal Kombat",
       "description": "There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text. All the Lorem Ipsum generators on the Internet tend to repeat predefined chunks as necessary.",
-      "rating": 9.1,
+      "rating": 7.4,
       "comments": [
         {
           "user": {
@@ -85,6 +112,14 @@
             "avatar": "https://sbcf.fr/wp-content/uploads/2018/03/sbcf-default-avatar.png"
           },
           "description": "sersger"
+        },
+        {
+          "user": {
+            "id": 3,
+            "username": "3",
+            "avatar": "https://s0.tchkcdn.com/g-mc6tg-noHZsP7M50PIm7nw/17/261238/540x540/r/0/afb_4a7c281_dyka_pryroda_buket.jpg"
+          },
+          "description": "jhkgvb"
         }
       ]
     },
@@ -93,7 +128,7 @@
       "image": "https://s5.afisha.ru/mediastorage/37/3b/aa04c6f9190c43d5a895d8ed3b37.jpg",
       "name": "Все везде и сразу",
       "description": "There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text. All the Lorem Ipsum generators on the Internet tend to repeat predefined chunks as necessary.",
-      "rating": 7.1,
+      "rating": 0,
       "comments": []
     },
     {
@@ -101,7 +136,7 @@
       "image": "https://upload.wikimedia.org/wikipedia/ru/d/de/Old_film_poster.jpg",
       "name": "Время",
       "description": "There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text. All the Lorem Ipsum generators on the Internet tend to repeat predefined chunks as necessary.",
-      "rating": 9.3,
+      "rating": 0,
       "comments": []
     },
     {
@@ -109,7 +144,7 @@
       "image": "https://thumbs.dfs.ivi.ru/storage29/contents/c/4/f3b4f712ab844ed3349bc9dede0e40.jpg",
       "name": "Дора",
       "description": "There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text. All the Lorem Ipsum generators on the Internet tend to repeat predefined chunks as necessary.",
-      "rating": 7.9,
+      "rating": 0,
       "comments": []
     },
     {
@@ -117,7 +152,7 @@
       "image": "https://thumbs.dfs.ivi.ru/storage15/contents/6/6/212609fbd50411bd32be5afce47c1b.jpg",
       "name": "Домовой",
       "description": "There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text. All the Lorem Ipsum generators on the Internet tend to repeat predefined chunks as necessary.",
-      "rating": 6.6,
+      "rating": 0,
       "comments": []
     },
     {
@@ -125,8 +160,17 @@
       "image": "https://images.kinomax.ru/550/films/6/6709/p_56a07a1.jpg",
       "name": "Аватар",
       "description": "Трио авантюристов отправляются в путешествие по всей России на поиски легендарной библиотеки Ивана Грозного. Чтобы совершить находку века, им нужно разгадать россыпь загадок и переиграть коварных конкурентов. Захватывающий приключенческий квест с лихим экшеном, юмором, необычными локациями и звёздной актёрской командой: Тихон Жизневский, Алексей Серебряков и Диана Пожарская vs Артём Ткаченко.",
-      "rating": 8.3,
-      "comments": []
+      "rating": 0,
+      "comments": [
+        {
+          "user": {
+            "id": 1,
+            "username": "1",
+            "avatar": "https://sbcf.fr/wp-content/uploads/2018/03/sbcf-default-avatar.png"
+          },
+          "description": "321"
+        }
+      ]
     }
   ]
 }
