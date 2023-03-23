@@ -47,7 +47,7 @@
                     const movie = {
                         image: this.image,
                         name: this.name,
-                        description: this.name,
+                        description: this.description,
                         rating: 0, 
                         comments: []
                     };

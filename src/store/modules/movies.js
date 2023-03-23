@@ -69,7 +69,7 @@ const actions = {
     },
     getMovieById(context, id) {
         context.commit('getMovieByIdStart');
-        moviesApi.getMovieById(id)
+        moviesApi.getMovieById(Number(id))
             .then((response) => {
                 context.commit('getMovieByIdSuccess', response.data);
             })

@@ -71,11 +71,14 @@ import StarRating from "vue-star-rating";
       onBuy() {
         this.$store.dispatch("changeUser", {
           ...this.currentUser,
-          tickets: [...this.currentUser?.tickets, this.movie?.id],
+          tickets: [...this.currentUser?.tickets, this.movie?.id]
         });
       },
       onSell() {
-        const tickets = this.currentUser.tickets.filter(ticket => ticket !== this.movie?.id)
+        let tickets = [...this.currentUser?.tickets];
+        const id = tickets.findIndex(ticket => ticket !== this.movie?.id);
+        tickets.splice(id - 1, 1);
+
         this.$store.dispatch("changeUser", {
           ...this.currentUser,
           tickets
@@ -128,62 +131,6 @@ import StarRating from "vue-star-rating";
       opacity: 0;
       transition: 0.5s all;
       color: white;
-    }
-
-    .star-rating {
-      button {
-        color: yellow;
-        background-color: transparent;
-        border: none;
-        outline: none;
-        cursor: pointer;
-
-        .star {
-          display: inline-block;
-          vertical-align: top;
-          width: 20px;
-          height: 20px;
-          background: linear-gradient(to bottom,
-              rgba(221, 220, 219, 1) 0%,
-              rgba(209, 208, 206, 1) 100%);
-          position: relative;
-        }
-
-        .star:before {
-          content: "";
-          position: absolute;
-          top: 1px;
-          left: 1px;
-          bottom: 1px;
-          right: 1px;
-          background: yellow;
-          z-index: 1;
-        }
-
-        .star,
-        .star:before {
-          -webkit-clip-path: polygon(50% 0%,
-              66% 27%,
-              98% 35%,
-              76% 57%,
-              79% 91%,
-              50% 78%,
-              21% 91%,
-              24% 57%,
-              2% 35%,
-              32% 27%);
-          clip-path: polygon(50% 0%,
-              66% 27%,
-              98% 35%,
-              76% 57%,
-              79% 91%,
-              50% 78%,
-              21% 91%,
-              24% 57%,
-              2% 35%,
-              32% 27%);
-        }
-      }
     }
 
     &:hover {

@@ -24,7 +24,7 @@
               <router-link :to="{name: 'user', params: {id: comment?.user?.id }}">
                 <div class="comment__author">
                   <div class="comment__author-avatar">
-                    <img :src="comment?.user?.avatar" />
+                    <img :src="comment?.user.avatar" />
                   </div>
                   <div class="comment__author-username">
                     <h2>
@@ -34,15 +34,17 @@
                 </div>
               </router-link>
               <div class="comment__desc">
-                {{ comment.description }}
+                {{ comment?.description }}
               </div>
             </div>
           </div>
-          <form @submit.prevent="onComment" class="writeComment">
-            <h1 class="comment__title">Оставить комментарий</h1>
-            <my-input v-model="comment"></my-input>
-            <my-button>Отправить</my-button>
-          </form>
+          <template v-if="currentUser">
+            <form @submit.prevent="onComment" class="writeComment">
+              <h1 class="comment__title">Оставить комментарий</h1>
+              <my-input v-model="comment"></my-input>
+              <my-button>Отправить</my-button>
+            </form>
+          </template>
         </div>
       </div>
     </div>
@@ -85,7 +87,7 @@
       },
       onComment() {
         if (this.comment.length > 0) {
-          this.$store.dispatch("leaveСomment", {
+          this.$store.dispatch("changeMovie", {
             ...this.movie,
             comments: [
               ...this.movie?.comments,
