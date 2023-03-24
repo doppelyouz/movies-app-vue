@@ -6,14 +6,13 @@
     <div v-else class="movies">
       <Movie v-for="movie in items" :key="movie.id" :movie="movie" />
     </div>
-    <Paginate
+      <Paginate
         :page-count="pageCount"
         :click-handler="pageChangeHandler"
         :prev-text="'Prev'"
         :next-text="'Next'"
         :container-class="'pagination'"
-        :page-class="'paginationItem'"
-    />
+      />
   </div>
 </template>
 <script>

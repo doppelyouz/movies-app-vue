@@ -27,9 +27,22 @@
         </div>
       </div>
     </div>
-    <div class="tickets" v-if="yourTickets.length > 0 ">
-      <Movie v-for="ticket in yourTickets" :key="ticket.id" :movie="ticket" :buy="false" :userPage="true" />
+    <div class="tickets" v-if="items?.length > 0">
+      <Movie
+        v-for="ticket in items"
+        :key="ticket"
+        :movie="ticket"
+        :buy="false"
+        :userPage="true"
+      />
     </div>
+      <Paginate
+        :page-count="pageCount"
+        :click-handler="pageChangeHandler"
+        :prev-text="'Prev'"
+        :next-text="'Next'"
+        :container-class="'pagination'"
+      />
   </div>
 </template>
   <script>
@@ -37,6 +50,8 @@ import { mapState } from "vuex";
 import Loading from "../components/Loading.vue";
 import ErrorMessage from "@/components/ErrorMessage.vue";
 import Movie from "@/components/Movie.vue";
+import Paginate from "vuejs-paginate-next";
+import paginationMixin from "@/mixins/pagination.mixin";
 
 export default {
   name: "AppUser",
@@ -44,12 +59,14 @@ export default {
     id: {
       type: Number,
       required: true,
-    }
+    },
   },
+  mixins: [paginationMixin],
   components: {
     Loading,
     ErrorMessage,
-    Movie
+    Movie,
+    Paginate,
   },
   computed: {
     ...mapState({
@@ -70,19 +87,19 @@ export default {
           }
         });
       });
+
       return tickets;
-    },
+    }
   },
   mounted() {
     this.fetchUser();
-    this.fetchMovies();
+    this.$store.dispatch("getMovies").then(() => {
+      this.setupPaginationForProfile(this.yourTickets)
+    })    
   },
   methods: {
     fetchUser() {
       this.$store.dispatch("getUser", this.id);
-    },
-    fetchMovies() {
-      this.$store.dispatch("getMovies");
     },
     logOut() {
       this.$store.dispatch("logOut");
@@ -150,6 +167,13 @@ export default {
     border-radius: 25px;
     padding: 35px;
     background: rgb(70, 50, 50);
+  }
+  .pagination {
+    display: flex;
+    gap: 30px;
+    padding: 15px;
+    align-items: center;
+    justify-content: center;
   }
 }
 </style>

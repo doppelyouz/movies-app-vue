@@ -19,7 +19,7 @@
             Topbar,
             User,
             Loading,
-            ErrorMessage
+            ErrorMessage,
         },
         computed: {
             ...mapState({
