@@ -108,7 +108,7 @@ export default {
       margin-bottom: 55px;
       .profile__avatar {
         height: 300px;
-        max-width: 300px;
+        width: 300px;
         img {
           border-radius: 20px;
           object-fit: cover;

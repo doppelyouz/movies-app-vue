@@ -53,6 +53,16 @@ const mutations = {
     },
     createMovieFailure(state) {
         state.isLoading = false;
+    },
+
+    deleteMovieStart(state) {
+        state.isLoading = true;
+    },
+    deleteMovieSuccess(state) {
+        state.isLoading = false;
+    },
+    deleteMovieFailure(state) {
+        state.isLoading = false;
     }
 };
 
@@ -95,6 +105,16 @@ const actions = {
             })
             .catch(() => {
                 context.commit('createMovieFailure');
+            });
+    },
+    deleteMovie(context, id) {
+        context.commit('deleteMovieStart');
+        moviesApi.deleteMovie(id)
+            .then(() => {
+                context.commit('deleteMovieSuccess');
+            })
+            .catch(() => {
+                context.commit('deleteMovieFailure');
             });
     },
 };

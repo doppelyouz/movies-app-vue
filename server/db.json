@@ -4,9 +4,10 @@
       "username": "1111111111111111",
       "email": "1",
       "password": "1",
-      "avatar": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSCC93NM2cDfrA4ciTixfZN8q8TQTSGMoGR9bG_jIb76g&s",
+      "avatar": "https://bogdo.studio/assets/images/resources/69/502.jpg",
       "tickets": [
-        11
+        11,
+        7
       ],
       "id": 1
     },
@@ -15,7 +16,10 @@
       "email": "2",
       "password": "2",
       "avatar": "https://sbcf.fr/wp-content/uploads/2018/03/sbcf-default-avatar.png",
-      "tickets": [],
+      "tickets": [
+        3,
+        12
+      ],
       "id": 2
     },
     {
@@ -25,14 +29,6 @@
       "avatar": "https://s0.tchkcdn.com/g-mc6tg-noHZsP7M50PIm7nw/17/261238/540x540/r/0/afb_4a7c281_dyka_pryroda_buket.jpg",
       "tickets": [],
       "id": 3
-    },
-    {
-      "username": "junkcookOneLOve",
-      "email": "iphonedana2003@gmail.com",
-      "password": "dana",
-      "avatar": "https://infobiscuit.com/wp-content/uploads/2020/11/BTS-BE-DELUXE-EDITION-%D1%84%D0%BE%D1%82%D0%BE%D0%B3%D1%80%D0%B0%D1%84%D0%B8%D1%8F-%D1%87%D0%BE%D0%BD%D0%B3%D1%83%D0%BA.jpg",
-      "tickets": [],
-      "id": 4
     }
   ],
   "movies": [
@@ -41,15 +37,32 @@
       "image": "https://thumbs.dfs.ivi.ru/storage5/contents/d/c/6753ef87d20b19d6e27d05d5fb0dd7.jpg",
       "name": "Последний богатырь",
       "description": "Избушка на курьих ножках посреди Москвы. Кощей и Колобок на мотоцикле. Жар-птица с лицом эстрадной звезды. Что происходит? Сказочное Белогорье врывается в наш мир в третьей части весёлого и зрелищного фэнтези для всей семьи. Зрителей ждёт новое масштабное приключение в компании Виктора Хориняка, Константина Лавроненко, Сергея Бурунова, Тимофея Трибунцева и других звёзд российского кино.",
-      "rating": 7.2,
-      "comments": []
+      "rating": 8.1,
+      "comments": [
+        {
+          "user": {
+            "id": 2,
+            "username": "2",
+            "avatar": "https://sbcf.fr/wp-content/uploads/2018/03/sbcf-default-avatar.png"
+          },
+          "description": "uyjkuykuy"
+        },
+        {
+          "user": {
+            "id": 2,
+            "username": "2",
+            "avatar": "https://sbcf.fr/wp-content/uploads/2018/03/sbcf-default-avatar.png"
+          },
+          "description": "yjkuyku yjkuykuyjkuykuyjkuykuyjkuyku yjkuyku yjkuykuyjkuykuyjkuyku yjkuykuyjkuykuyjkuyku"
+        }
+      ]
     },
     {
       "id": 2,
       "image": "https://thumbs.dfs.ivi.ru/storage8/contents/c/f/37a2cbe0d637b9e53ec5743f4fbb28.jpg",
       "name": "Супер агенты",
       "description": "Обычный парень со странным прозвищем Матильда мечтает стать секретным агентом. Однажды он получает своё первое важное задание: ему предстоит вернуть сбежавшую дочь генпрокурора из Дубая. Удастся ли герою справиться с миссией?",
-      "rating": 7.2,
+      "rating": 8.6,
       "comments": []
     },
     {
@@ -57,7 +70,7 @@
       "image": "https://thumbs.dfs.ivi.ru/storage26/contents/5/c/21c7c18bfe111e6e0ab01b43121f2c.jpg",
       "name": "Либерея",
       "description": "Трио авантюристов отправляются в путешествие по всей России на поиски легендарной библиотеки Ивана Грозного. Чтобы совершить находку века, им нужно разгадать россыпь загадок и переиграть коварных конкурентов. Захватывающий приключенческий квест с лихим экшеном, юмором, необычными локациями и звёздной актёрской командой: Тихон Жизневский, Алексей Серебряков и Диана Пожарская vs Артём Ткаченко.",
-      "rating": 9.7,
+      "rating": 6.4,
       "comments": []
     },
     {
@@ -65,7 +78,7 @@
       "image": "https://img.championat.com/i/u/c/1617357710861678005.jpg",
       "name": "Mortal Kombat",
       "description": "There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text. All the Lorem Ipsum generators on the Internet tend to repeat predefined chunks as necessary.",
-      "rating": 8.8,
+      "rating": 7.6,
       "comments": [
         {
           "user": {
@@ -74,6 +87,14 @@
             "avatar": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSCC93NM2cDfrA4ciTixfZN8q8TQTSGMoGR9bG_jIb76g&s"
           },
           "description": "jytg"
+        },
+        {
+          "user": {
+            "id": 1,
+            "username": "1111111111111111",
+            "avatar": "https://bogdo.studio/assets/images/resources/69/502.jpg"
+          },
+          "description": "few"
         }
       ]
     },
@@ -98,7 +119,7 @@
       "image": "https://thumbs.dfs.ivi.ru/storage29/contents/c/4/f3b4f712ab844ed3349bc9dede0e40.jpg",
       "name": "Дора",
       "description": "There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text. All the Lorem Ipsum generators on the Internet tend to repeat predefined chunks as necessary.",
-      "rating": 0,
+      "rating": 3.6,
       "comments": []
     },
     {
@@ -126,12 +147,40 @@
       "id": 10
     },
     {
-      "image": "https://webpulse.imgsmail.ru/imgpreview?mb=webpulse&key=pulse_cabinet-image-7fe23778-e58d-4da0-a60a-f803ebb1b1f7",
-      "name": "чонгук",
-      "description": "чонгук",
-      "rating": 9.9,
+      "image": "https://cdnn21.img.ria.ru/images/07e7/01/12/1845661229_0:0:2730:2048_600x0_80_0_1_030c6c456c728031d4cc115221fbf780.jpg",
+      "name": "выфвыфвыфвыф",
+      "description": "выфвыфвыфвыф",
+      "rating": 0,
       "comments": [],
-      "id": 11
+      "userId": 1,
+      "id": 13
+    },
+    {
+      "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcScrwpDOWx6lUIZ3aKDgJJiTLT5apLiN5iN5w&usqp=CAU",
+      "name": "dsadsadsadsa",
+      "description": "dsadsadsadsadsadsadsad sadsadsadsadsadsad sadsadsadsadsadsadsad sadsadsadsadsadsadsad sadsadsadsa dsadsadsadsad sadsadsadsadsad sadsadsadsadsad sadsadsa",
+      "rating": 10,
+      "comments": [
+        {
+          "user": {
+            "id": 1,
+            "username": "1111111111111111",
+            "avatar": "https://bogdo.studio/assets/images/resources/69/502.jpg"
+          },
+          "description": "gsregsre"
+        }
+      ],
+      "userId": 2,
+      "id": 14
+    },
+    {
+      "image": "https://static-cse.canva.com/blob/846900/photo1502082553048f009c37129b9e1583341920812.jpeg",
+      "name": "321321321321new",
+      "description": "newneewewewew",
+      "rating": 0,
+      "comments": [],
+      "userId": 2,
+      "id": 15
     }
   ]
 }

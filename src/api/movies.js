@@ -16,9 +16,14 @@ const createMovie = (movie) => {
     return axios.post(`/movies`, movie);
 }
 
+const deleteMovie = (id) => {
+    return axios.delete(`/movies/${id}`);
+}
+
 export default {
     getMovies,
     getMovieById,
     changeMovie,
-    createMovie
+    createMovie,
+    deleteMovie
 };

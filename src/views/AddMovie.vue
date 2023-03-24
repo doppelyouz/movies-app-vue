@@ -39,7 +39,7 @@
         },  
         computed: {
             ...mapState({
-
+                currentUser: (state) => state.auth.currentUser
             }),
         },
         methods: {
@@ -49,7 +49,8 @@
                         name: this.name,
                         description: this.description,
                         rating: 0, 
-                        comments: []
+                        comments: [],
+                        userId: this.currentUser.id
                     };
 
                     this.$store.dispatch('createMovie', movie)
