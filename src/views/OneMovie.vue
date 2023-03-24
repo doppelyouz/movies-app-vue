@@ -228,6 +228,8 @@
         gap: 20px;
       }
     .movie__comments {
+        max-width: 600px;
+        width: 100%;
       .comment__title {
         font-size: 24px;
         color: rgb(255, 255, 255);

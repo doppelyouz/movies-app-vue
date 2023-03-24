@@ -153,7 +153,7 @@ import StarRating from "vue-star-rating";
     }
 
     .movie__image {
-      max-width: 400px;
+      width: 100%;
       height: 500px;
 
       img {

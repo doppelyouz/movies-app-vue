@@ -68,14 +68,18 @@ const mutations = {
 
 const actions = {
     getMovies(context) {
-        context.commit('getMoviesStart');
-        moviesApi.getMovies()
-            .then((response) => {
-                context.commit('getMoviesSuccess', response.data);
-            })
-            .catch(() => {
-                context.commit('getMoviesFailure');
-            });
+        return new Promise((resolve, reject) => {
+            context.commit('getMoviesStart');
+            moviesApi.getMovies()
+                .then((response) => {
+                    context.commit('getMoviesSuccess', response.data);
+                    resolve(response.data)
+                })
+                .catch(() => {
+                    context.commit('getMoviesFailure');
+                    reject();
+                });
+        });
     },
     getMovieById(context, id) {
         context.commit('getMovieByIdStart');

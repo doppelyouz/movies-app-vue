@@ -18,7 +18,8 @@
       "avatar": "https://sbcf.fr/wp-content/uploads/2018/03/sbcf-default-avatar.png",
       "tickets": [
         3,
-        12
+        12,
+        5
       ],
       "id": 2
     },
@@ -71,7 +72,16 @@
       "name": "Либерея",
       "description": "Трио авантюристов отправляются в путешествие по всей России на поиски легендарной библиотеки Ивана Грозного. Чтобы совершить находку века, им нужно разгадать россыпь загадок и переиграть коварных конкурентов. Захватывающий приключенческий квест с лихим экшеном, юмором, необычными локациями и звёздной актёрской командой: Тихон Жизневский, Алексей Серебряков и Диана Пожарская vs Артём Ткаченко.",
       "rating": 6.4,
-      "comments": []
+      "comments": [
+        {
+          "user": {
+            "id": 2,
+            "username": "2",
+            "avatar": "https://sbcf.fr/wp-content/uploads/2018/03/sbcf-default-avatar.png"
+          },
+          "description": "fds"
+        }
+      ]
     },
     {
       "id": 4,
@@ -112,7 +122,48 @@
       "name": "Время",
       "description": "There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text. All the Lorem Ipsum generators on the Internet tend to repeat predefined chunks as necessary.",
       "rating": 5.2,
-      "comments": []
+      "comments": [
+        {
+          "user": {
+            "id": 2,
+            "username": "2",
+            "avatar": "https://sbcf.fr/wp-content/uploads/2018/03/sbcf-default-avatar.png"
+          },
+          "description": "fewfwfewfwfewfwfew fewfw fwfewfwfew  fwfewfwfewfwfew  fwfewfwfewfwfew  fwfewfwfewfwfew fwfewfwfewfwfewfw"
+        },
+        {
+          "user": {
+            "id": 2,
+            "username": "2",
+            "avatar": "https://sbcf.fr/wp-content/uploads/2018/03/sbcf-default-avatar.png"
+          },
+          "description": "fwfewfwfewfwfew  fwfewfwfewfwfew  fwfewfwfewfwfew fwfewfwfewfwfew fwfewfwfewfwfew fwfewfwfewfwfew fwfewfwfewfwfew fwfewfwfewfwfew fwfewfwfewfwfew fwfewfwfewfwfew fwfewfwfewfwfew fwfewfwfewfwfew "
+        },
+        {
+          "user": {
+            "id": 2,
+            "username": "2",
+            "avatar": "https://sbcf.fr/wp-content/uploads/2018/03/sbcf-default-avatar.png"
+          },
+          "description": "fwfewfwfewfwfew fwfewfwfewfwfew fwfewfwfewfwfew fwfewfwfewfwfew fwfewfwfewfwfew fwfewfwfewfwfew fwfewfwfewfwfew fwfewfwfewfwfew fwfewfwfewfwfew fwfewfwfewfwfew fwfewfwfewfwfew fwfewfwfewfwfew fwfewfwfewfwfew fwfewfwfewfwfew fwfewfwfewfwfew fwfewfwfewfwfew fwfewfwfewfwfew fwfewfwfewfwfew fwfewfwfewfwfew fwfewfwfewfwfew fwfewfwfewfwfew fwfewfwfewfwfew fwfewfwfewfwfew fwfewfwfewfwfew fwfewfwfewfwfew fwfewfwfewfwfew fwfewfwfewfwfew fwfewfwfewfwfew fwfewfwfewfwfew fwfewfwfewfwfew fwfewfwfewfwfew "
+        },
+        {
+          "user": {
+            "id": 2,
+            "username": "2",
+            "avatar": "https://sbcf.fr/wp-content/uploads/2018/03/sbcf-default-avatar.png"
+          },
+          "description": "         max-width: 600px;         width: 100%;         max-width: 600px;         width: 100%;         max-width: 600px;         width: 100%;"
+        },
+        {
+          "user": {
+            "id": 2,
+            "username": "2",
+            "avatar": "https://sbcf.fr/wp-content/uploads/2018/03/sbcf-default-avatar.png"
+          },
+          "description": "fwfewfwfewfwfewfwfewfwfewfwfewfwfewfwfewfwfewfwfewfwfewfwfewfwfewfwfewfwfewfwfewfwfewfwfewfwfewfwfewfwfewfwfewfwfewfwfewfwfewfwfewfwfewfwfewfwfewfwfewfwfewfwfewfwfewfwfewfwfewfwfew"
+        }
+      ]
     },
     {
       "id": 7,
@@ -143,7 +194,16 @@
       "name": "321321",
       "description": "321321",
       "rating": 6.3,
-      "comments": [],
+      "comments": [
+        {
+          "user": {
+            "id": 2,
+            "username": "2",
+            "avatar": "https://sbcf.fr/wp-content/uploads/2018/03/sbcf-default-avatar.png"
+          },
+          "description": "fewfew"
+        }
+      ],
       "id": 10
     },
     {
@@ -156,24 +216,6 @@
       "id": 13
     },
     {
-      "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcScrwpDOWx6lUIZ3aKDgJJiTLT5apLiN5iN5w&usqp=CAU",
-      "name": "dsadsadsadsa",
-      "description": "dsadsadsadsadsadsadsad sadsadsadsadsadsad sadsadsadsadsadsadsad sadsadsadsadsadsadsad sadsadsadsa dsadsadsadsad sadsadsadsadsad sadsadsadsadsad sadsadsa",
-      "rating": 10,
-      "comments": [
-        {
-          "user": {
-            "id": 1,
-            "username": "1111111111111111",
-            "avatar": "https://bogdo.studio/assets/images/resources/69/502.jpg"
-          },
-          "description": "gsregsre"
-        }
-      ],
-      "userId": 2,
-      "id": 14
-    },
-    {
       "image": "https://static-cse.canva.com/blob/846900/photo1502082553048f009c37129b9e1583341920812.jpeg",
       "name": "321321321321new",
       "description": "newneewewewew",
@@ -181,6 +223,15 @@
       "comments": [],
       "userId": 2,
       "id": 15
+    },
+    {
+      "image": "https://www.5.ua/media/pictures/original/194292.jpg?t=1600087834",
+      "name": "fds",
+      "description": "fds",
+      "rating": 0,
+      "comments": [],
+      "userId": 2,
+      "id": 16
     }
   ]
 }
