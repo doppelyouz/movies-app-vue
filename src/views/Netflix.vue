@@ -2,7 +2,6 @@
   <div>
     <Topbar />
     <Loading v-if="isLoading" />
-    <ErrorMessage v-else-if="error" />
     <div v-else class="movies">
       <Movie v-for="movie in items" :key="movie.id" :movie="movie" />
     </div>
@@ -12,6 +11,8 @@
         :prev-text="'Prev'"
         :next-text="'Next'"
         :container-class="'pagination'"
+        :page-class="'pagination-item'"
+        v-if="items"
       />
   </div>
 </template>
@@ -19,7 +20,6 @@
 import Topbar from "../components/Topbar.vue";
 import { mapState } from "vuex";
 import Loading from "../components/Loading.vue";
-import ErrorMessage from "@/components/ErrorMessage.vue";
 import Movie from "../components/Movie.vue";
 import Paginate from "vuejs-paginate-next";
 import paginationMixin from "@/mixins/pagination.mixin";
@@ -29,7 +29,6 @@ export default {
   components: {
     Topbar,
     Loading,
-    ErrorMessage,
     Movie,
     Paginate,
   },
@@ -38,7 +37,6 @@ export default {
     ...mapState({
       isLoading: (state) => state.movies.isLoading,
       movies: (state) => state.movies.data,
-      error: (state) => state.movies.error,
     }),
   },
   mounted() {
@@ -61,5 +59,8 @@ export default {
     padding: 15px;
     align-items: center;
     justify-content: center;
+    .pagination-item {
+      padding: 15px;
+    }
   }
 </style>

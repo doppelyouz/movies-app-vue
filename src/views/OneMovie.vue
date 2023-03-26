@@ -2,7 +2,6 @@
   <div>
     <Topbar />
     <Loading v-if="isLoading" />
-    <ErrorMessage v-if="error" />
     <div v-if="movie" class="movie">
       <div class="movie__image">
         <img :src="movie?.image" />
@@ -33,18 +32,18 @@
         <div class="movie__comments">
           <div class="comments" v-if="movie?.comments">
             <div v-for="comment in movie?.comments" class="comment" :key="comment">
-              <router-link :to="{name: 'user', params: {id: comment?.user?.id }}">
-                <div class="comment__author">
-                  <div class="comment__author-avatar">
-                    <img :src="comment?.user.avatar" />
+                <router-link :to="currentUser?.id === comment?.user?.id ? {name: 'profile'} : {name: 'user', params: {id: comment?.user?.id }} ">
+                  <div class="comment__author">
+                    <div class="comment__author-avatar">
+                      <img :src="comment?.user.avatar" />
+                    </div>
+                    <div class="comment__author-username">
+                      <h2>
+                        {{ comment?.user?.username }}
+                      </h2>
+                    </div>
                   </div>
-                  <div class="comment__author-username">
-                    <h2>
-                      {{ comment?.user?.username }}
-                    </h2>
-                  </div>
-                </div>
-              </router-link>
+                </router-link>
               <div class="comment__desc">
                 {{ comment?.description }}
               </div>
@@ -77,18 +76,14 @@
 </template>
 <script>
   import Topbar from "@/components/Topbar.vue";
-  import ErrorMessage from "@/components/ErrorMessage.vue";
   import Loading from "@/components/Loading.vue";
-  import {
-    mapState
-  } from "vuex";
+  import { mapState } from "vuex";
   import StarRating from "vue-star-rating";
 
   export default {
     name: "AppOneMovie",
     components: {
       Topbar,
-      ErrorMessage,
       Loading,
       StarRating,
     },
@@ -105,7 +100,6 @@
     computed: {
       ...mapState({
         isLoading: (state) => state.movies.isLoading,
-        error: (state) => state.movies.error,
         movie: (state) => state.movies.movie,
         currentUser: (state) => state.auth.currentUser
       }),

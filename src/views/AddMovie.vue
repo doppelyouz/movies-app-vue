@@ -3,7 +3,7 @@
         <Topbar />
         <div class="add">
             <form class="add__form" @submit.prevent="createMovie">
-                <h1 class="add__title">Добавить фильм</h1>
+                <h1 class="add__title">Add movie</h1>
                 <div class="add__input-group">
                     <div class="input-group__title">Name:</div>
                     <my-input v-model="name"/>

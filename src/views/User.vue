@@ -1,87 +1,83 @@
 <template>
-  <div class="profile">
-    <Loading v-if="isLoadingAuth" />
-    <ErrorMessage v-if="errorAuth" />
-    <Loading v-if="isLoadingMovies" />
-    <ErrorMessage v-if="errorMovies" />
-    <div class="profile__data" v-if="user">
-      <div class="profile__bio">
-        <div class="profile__avatar">
-          <img :src="user?.avatar" />
-        </div>
-        <div class="profile__personalData">
-          <div class="profile__name">
-            <div>Username:</div>
-            <h2>{{ user?.username }}</h2>
+  <div>
+    <Topbar />
+    <Loading v-if="isLoading"/>
+    <div class="profile" v-if="user">
+      <Loading v-if="isLoading" />
+      <div class="profile__data" v-if="user">
+        <div class="profile__bio">
+          <div class="profile__avatar">
+            <img :src="user?.avatar" />
           </div>
-          <div class="profile__email">
-            <div>Email:</div>
-            <h2 class="profile__email">{{ user?.email }}</h2>
+          <div class="profile__personalData">
+            <div class="profile__name">
+              <div>Username:</div>
+              <h2>{{ user?.username }}</h2>
+            </div>
+            <div class="profile__email">
+              <div>Email:</div>
+              <h2 class="profile__email">{{ user?.email }}</h2>
+            </div>
           </div>
-        </div>
-        <div class="profile__settings" v-if="currentUser?.id === user?.id">
-          <router-link :to="{ name: 'settings' }"
-            ><my-button>Settings</my-button></router-link
-          >
-          <my-button @click="logOut">Log out</my-button>
         </div>
       </div>
-    </div>
-    <div class="tickets" v-if="items?.length > 0">
-      <Movie
-        v-for="ticket in items"
-        :key="ticket"
-        :movie="ticket"
-        :buy="false"
-        :userPage="true"
-      />
-    </div>
+      <div class="tickets" v-if="items?.length > 0">
+        <Movie
+          v-for="ticket in items"
+          :key="ticket"
+          :movie="ticket"
+          :buy="false"
+          :userPage="true"
+        />
+      </div>
       <Paginate
         :page-count="pageCount"
         :click-handler="pageChangeHandler"
         :prev-text="'Prev'"
         :next-text="'Next'"
         :container-class="'pagination'"
+        v-if="this.tickets?.length > 0"
       />
+    </div>
   </div>
 </template>
-  <script>
+<script>
+import Topbar from "@/components/Topbar";
 import { mapState } from "vuex";
-import Loading from "../components/Loading.vue";
-import ErrorMessage from "@/components/ErrorMessage.vue";
 import Movie from "@/components/Movie.vue";
 import Paginate from "vuejs-paginate-next";
 import paginationMixin from "@/mixins/pagination.mixin";
+import _ from "lodash";
+import Loading from '../components/Loading.vue';
 
 export default {
   name: "AppUser",
-  props: {
-    id: {
-      type: Number,
-      required: true,
-    },
-  },
-  mixins: [paginationMixin],
   components: {
-    Loading,
-    ErrorMessage,
+    Topbar,
     Movie,
     Paginate,
+    Loading
+  },
+  mixins: [paginationMixin],
+  data() {
+    return {
+      page: 1,
+      pageSize: 3,
+      pageCount: 0,
+      allItems: [],
+      items: [],
+    };
   },
   computed: {
     ...mapState({
-      isLoadingAuth: (state) => state.auth.isLoading,
-      errorAuth: (state) => state.auth.error,
-      isLoadingMovies: (state) => state.movies.isLoading,
-      errorMovies: (state) => state.movies.error,
-      user: (state) => state.auth.user,
-      currentUser: (state) => state.auth.currentUser,
+      isLoading: (state) => state.users.isLoading,
+      user: (state) => state.users.user,
       movies: (state) => state.movies.data,
     }),
-    yourTickets() {
+    tickets() {
       let tickets = [];
       this.movies?.forEach((movie) => {
-        this.user?.tickets?.forEach((userTicket) => {
+        this.user.tickets?.forEach((userTicket) => {
           if (userTicket === movie.id) {
             tickets.push(movie);
           }
@@ -89,26 +85,30 @@ export default {
       });
 
       return tickets;
-    }
+    },
   },
-  mounted() {
-    this.fetchUser();
-    this.$store.dispatch("getMovies").then(() => {
-      this.setupPaginationForProfile(this.yourTickets)
-    })    
+  watch: {
+    tickets() {
+      this.allItems = _.chunk(this.tickets, this.pageSize);
+      this.pageCount = _.size(this.allItems);
+      this.items = this.allItems[this.page - 1] || this.allItems[0];
+    }
   },
   methods: {
     fetchUser() {
-      this.$store.dispatch("getUser", this.id);
+      this.$store.dispatch("getUser", this.$route.params.id);
     },
-    logOut() {
-      this.$store.dispatch("logOut");
-      this.$router.push({ name: "home" });
+    pageChangeHandler(page) {
+      this.items = this.allItems[page - 1] || this.allItems[0];
     },
+  },
+  mounted() {
+    this.fetchUser();
+    this.$store.dispatch("getMovies");
   },
 };
 </script>
-  <style lang="scss" scoped>
+<style lang="scss" scoped>
 .profile {
   margin: 0 auto;
   max-width: 1200px;
@@ -152,10 +152,6 @@ export default {
           display: flex;
           gap: 20px;
         }
-      }
-      .profile__settings {
-        display: flex;
-        gap: 20px;
       }
     }
   }

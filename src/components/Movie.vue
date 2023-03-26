@@ -61,7 +61,7 @@ import StarRating from "vue-star-rating";
     computed: {
       ...mapState({
         currentUser: (state) => state.auth.currentUser,
-        user: (state) => state.auth.user,
+        user: (state) => state.users.user,
       }),
       isSubmitting() {
         return this.$store.state.auth.isSubmitting;
@@ -76,8 +76,8 @@ import StarRating from "vue-star-rating";
       },
       onSell() {
         let tickets = [...this.currentUser?.tickets];
-        const id = tickets.findIndex(ticket => ticket !== this.movie?.id);
-        tickets.splice(id - 1, 1);
+        const id = tickets.findIndex(ticket => ticket === this.movie?.id);
+        tickets.splice(id, 1);
 
         this.$store.dispatch("changeUser", {
           ...this.currentUser,

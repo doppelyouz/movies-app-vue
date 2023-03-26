@@ -3,7 +3,6 @@ import moviesApi from "@/api/movies";
 const state = {
     data: null,
     isLoading: false,
-    errors: null,
     movie: null
 }
 
@@ -49,6 +48,7 @@ const mutations = {
         state.isLoading = true;
     },
     createMovieSuccess(state) {
+        state.movie = null;
         state.isLoading = false;
     },
     createMovieFailure(state) {
@@ -60,6 +60,7 @@ const mutations = {
     },
     deleteMovieSuccess(state) {
         state.isLoading = false;
+        state.movie = null;
     },
     deleteMovieFailure(state) {
         state.isLoading = false;

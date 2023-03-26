@@ -6,24 +6,24 @@
       "password": "1",
       "avatar": "https://bogdo.studio/assets/images/resources/69/502.jpg",
       "tickets": [
-        11,
-        7
+        4,
+        16,
+        17,
+        16,
+        15,
+        13
       ],
       "id": 1
     },
     {
-      "username": "2",
+      "username": "222222222222222",
       "email": "2",
       "password": "2",
       "avatar": "https://sbcf.fr/wp-content/uploads/2018/03/sbcf-default-avatar.png",
       "tickets": [
+        2,
         3,
-        3,
-        5,
-        4,
-        16,
-        15,
-        13
+        5
       ],
       "id": 2
     },
@@ -32,8 +32,19 @@
       "email": "3",
       "password": "3",
       "avatar": "https://s0.tchkcdn.com/g-mc6tg-noHZsP7M50PIm7nw/17/261238/540x540/r/0/afb_4a7c281_dyka_pryroda_buket.jpg",
-      "tickets": [],
+      "tickets": [
+        5,
+        16
+      ],
       "id": 3
+    },
+    {
+      "username": "6",
+      "email": "6",
+      "password": "6",
+      "avatar": "https://sbcf.fr/wp-content/uploads/2018/03/sbcf-default-avatar.png",
+      "tickets": [],
+      "id": 4
     }
   ],
   "movies": [
@@ -67,8 +78,17 @@
       "image": "https://thumbs.dfs.ivi.ru/storage8/contents/c/f/37a2cbe0d637b9e53ec5743f4fbb28.jpg",
       "name": "Супер агенты",
       "description": "Обычный парень со странным прозвищем Матильда мечтает стать секретным агентом. Однажды он получает своё первое важное задание: ему предстоит вернуть сбежавшую дочь генпрокурора из Дубая. Удастся ли герою справиться с миссией?",
-      "rating": 8.6,
-      "comments": []
+      "rating": 9.2,
+      "comments": [
+        {
+          "user": {
+            "id": 1,
+            "username": "1111111111111111",
+            "avatar": "https://bogdo.studio/assets/images/resources/69/502.jpg"
+          },
+          "description": "ytjutyjyt"
+        }
+      ]
     },
     {
       "id": 3,
@@ -84,6 +104,14 @@
             "avatar": "https://sbcf.fr/wp-content/uploads/2018/03/sbcf-default-avatar.png"
           },
           "description": "fds"
+        },
+        {
+          "user": {
+            "id": 3,
+            "username": "3333333333333",
+            "avatar": "https://s0.tchkcdn.com/g-mc6tg-noHZsP7M50PIm7nw/17/261238/540x540/r/0/afb_4a7c281_dyka_pryroda_buket.jpg"
+          },
+          "description": "44"
         }
       ]
     },
@@ -183,7 +211,16 @@
       "name": "Домовой",
       "description": "There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text. All the Lorem Ipsum generators on the Internet tend to repeat predefined chunks as necessary.",
       "rating": 5.9,
-      "comments": []
+      "comments": [
+        {
+          "user": {
+            "id": 4,
+            "username": "6",
+            "avatar": "https://sbcf.fr/wp-content/uploads/2018/03/sbcf-default-avatar.png"
+          },
+          "description": "htsdr"
+        }
+      ]
     },
     {
       "id": 9,
@@ -191,7 +228,16 @@
       "name": "Аватар",
       "description": "Трио авантюристов отправляются в путешествие по всей России на поиски легендарной библиотеки Ивана Грозного. Чтобы совершить находку века, им нужно разгадать россыпь загадок и переиграть коварных конкурентов. Захватывающий приключенческий квест с лихим экшеном, юмором, необычными локациями и звёздной актёрской командой: Тихон Жизневский, Алексей Серебряков и Диана Пожарская vs Артём Ткаченко.",
       "rating": 6,
-      "comments": []
+      "comments": [
+        {
+          "user": {
+            "id": 1,
+            "username": "1111111111111111",
+            "avatar": "https://bogdo.studio/assets/images/resources/69/502.jpg"
+          },
+          "description": "uy"
+        }
+      ]
     },
     {
       "image": "https://s0.rbk.ru/v6_top_pics/media/img/4/74/756256715374744.jpg",
@@ -212,7 +258,7 @@
     },
     {
       "image": "https://cdnn21.img.ria.ru/images/07e7/01/12/1845661229_0:0:2730:2048_600x0_80_0_1_030c6c456c728031d4cc115221fbf780.jpg",
-      "name": "выфвыфвыфвыф",
+      "name": "dsa",
       "description": "выфвыфвыфвыф",
       "rating": 0,
       "comments": [],
@@ -232,10 +278,28 @@
       "image": "https://www.5.ua/media/pictures/original/194292.jpg?t=1600087834",
       "name": "fds",
       "description": "fds",
-      "rating": 0,
-      "comments": [],
+      "rating": 5.5,
+      "comments": [
+        {
+          "user": {
+            "id": 1,
+            "username": "1111111111111111",
+            "avatar": "https://bogdo.studio/assets/images/resources/69/502.jpg"
+          },
+          "description": "kuhy"
+        }
+      ],
       "userId": 2,
       "id": 16
+    },
+    {
+      "image": "https://media.istockphoto.com/id/537373196/photo/trees-forming-a-heart.jpg?s=612x612&w=0&k=20&c=onZKNjkycICe4q2ZDnKi39z42Ax9tpZT7pph-2e5Seo=",
+      "name": "beu",
+      "description": "feaefwfwa",
+      "rating": 0,
+      "comments": [],
+      "userId": 1,
+      "id": 17
     }
   ]
 }

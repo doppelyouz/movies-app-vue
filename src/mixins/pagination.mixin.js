@@ -16,13 +16,11 @@ export default {
             this.items = this.allItems[page - 1] || this.allItems[0]
         },
         setupPagination(allItems) {
-            console.log(allItems);
             this.allItems = _.chunk(allItems, this.pageSize)
             this.pageCount = _.size(this.allItems)
             this.items = this.allItems[this.page - 1] || this.allItems[0]
         },
         setupPaginationForProfile(allItems) {
-            console.log(allItems);
             this.allItems = _.chunk(allItems, this.pageSizeForProfile)
             this.pageCount = _.size(this.allItems)
             this.items = this.allItems[this.page - 1] || this.allItems[0]

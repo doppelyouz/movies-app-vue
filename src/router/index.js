@@ -5,7 +5,7 @@ import Login from '../views/Login'
 import Registration from '../views/Registration'
 import Profile from '../views/Profile'
 import Settings from '../views/Settings'
-import UserPage from '../views/UserPage'
+import User from '../views/User'
 import OneMovie from '../views/OneMovie'
 import AddMovie from '../views/AddMovie'
 
@@ -33,7 +33,7 @@ const routes = [
   {
     path: '/user/:id',
     name: 'user',
-    component: UserPage
+    component: User
   },
   {
     path: '/settings',

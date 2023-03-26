@@ -33,7 +33,7 @@
     },
     computed: {
         ...mapState({
-            users: state => state.auth.users
+            users: state => state.users.users
         }),
         isSubmitting() {
             return this.$store.state.auth.isSubmitting

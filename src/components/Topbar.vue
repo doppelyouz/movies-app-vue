@@ -9,7 +9,7 @@
         </router-link> 
       </li>
     </ul>
-    <template v-if="currentUser">
+    <template v-if="currentUser"> 
       <router-link :to="{ name: 'profile' }" class="topbar__profile">
         <div class="topbar__profile-logo">
           <img :src="currentUser.avatar" alt="" />
@@ -42,8 +42,7 @@ export default {
   computed: {
     ...mapState({
       currentUser: (state) => state.auth.currentUser,
-      isLoggedIn: (state) => state.auth.isLoggedIn,
-      isAnonymous: (state) => state.auth.isAnonymous,
+      isLoading: (state) => state.auth.isLoading,
     }),
   },
 };
