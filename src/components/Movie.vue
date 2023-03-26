@@ -15,7 +15,7 @@
           active-color="yellow"
           v-bind:star-size="15"
           :read-only="true"
-          :rating="movie?.rating"
+          :rating="ratingCount"
           class="rating"
           :increment="0.1"
         />
@@ -66,6 +66,13 @@ import StarRating from "vue-star-rating";
       isSubmitting() {
         return this.$store.state.auth.isSubmitting;
       },
+      ratingCount() {
+        if(this.movie?.rating?.length <= 0) {
+          return 0;
+        }
+        const avg = Array.from(this.movie?.rating).reduce((accumulator, currentValue) => Number(accumulator + currentValue), 0);
+        return Number((avg / this.movie?.rating?.length).toFixed(1));
+      }
     },
     methods: {
       onBuy() {

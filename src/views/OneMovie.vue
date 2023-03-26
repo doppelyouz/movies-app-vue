@@ -26,7 +26,7 @@
             <my-input v-model="newImage"/>
         </div>
         <form @submit.prevent="onRating" class="onRating">
-            <star-rating @update:rating="setRating" v-bind:max-rating="10" inactive-color="white" active-color="yellow" v-bind:star-size="50" :rating="movie?.rating" class="rating" :increment="0.1" />
+            <star-rating @update:rating="setRating" v-bind:max-rating="10" inactive-color="white" active-color="yellow" v-bind:star-size="50" :rating="ratingCount" class="rating" :increment="0.1" />
             <my-button v-if="currentUser">Сохранить</my-button>
         </form>
         <div class="movie__comments">
@@ -103,6 +103,11 @@
         movie: (state) => state.movies.movie,
         currentUser: (state) => state.auth.currentUser
       }),
+      ratingCount() {
+        const avg = this.movie?.rating?.reduce((accumulator, currentValue) => Number(accumulator + currentValue), 0);
+        console.log(avg);
+        return Number((avg / this.movie?.rating?.length).toFixed(1)) || 0;
+      }
     },
     methods: {
       fetchMovie() {
@@ -134,7 +139,7 @@
         if(this.rating > 0) {
           this.$store.dispatch("changeMovie", {
             ...this.movie,
-            rating: this.movie?.rating === 0 ? Number(this.rating) : Number(((this.movie?.rating + this.rating) / 2).toFixed(1))
+            rating: [...this.movie?.rating, Number(this.rating.toFixed(1))]
           });
           this.rating = 0;
         }

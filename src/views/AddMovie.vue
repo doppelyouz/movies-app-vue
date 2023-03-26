@@ -48,7 +48,7 @@
                         image: this.image,
                         name: this.name,
                         description: this.description,
-                        rating: 0, 
+                        rating: [], 
                         comments: [],
                         userId: this.currentUser.id
                     };
@@ -81,7 +81,7 @@
         gap: 20px;
         .add__title {
             font-size: 40px;
-            margin-bottom: 25px;
+            margin-bottom: 35px;
             color:white;
         }
         .add__input-group {
