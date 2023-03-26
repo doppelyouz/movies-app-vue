@@ -1,6 +1,10 @@
 <template>
-  <div>
+  <div class="wrapper">
     <Topbar />
+    <div class="search">
+      <h1 class="search__title">Search: </h1>
+      <my-input type="search" v-model="search"/>
+    </div>
     <Loading v-if="isLoading" />
     <div v-else class="movies">
       <Movie v-for="movie in items" :key="movie.id" :movie="movie" />
@@ -33,11 +37,26 @@ export default {
     Paginate,
   },
   mixins: [paginationMixin],
+  data() {
+    return {
+      search: ''
+    }
+  },
   computed: {
     ...mapState({
       isLoading: (state) => state.movies.isLoading,
       movies: (state) => state.movies.data,
     }),
+    searchHandler() {
+      return this.movies?.filter(movie => {
+        return movie?.name?.includes(this.search)
+      })
+    }
+  },
+  watch: {
+    searchHandler() {
+      this.setupPagination(this.searchHandler)
+    }
   },
   mounted() {
     this.$store.dispatch("getMovies").then(data => {
@@ -47,11 +66,12 @@ export default {
 }
 </script>
 <style lang="scss" scoped>
+.wrapper {
+  padding: 35px;
 .movies {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
   gap: 40px;
-  padding: 35px;
 }
   .pagination {
     display: flex;
@@ -63,4 +83,16 @@ export default {
       padding: 15px;
     }
   }
+  .search {
+    display: flex;
+    align-items: start;
+    justify-content: end;
+    gap: 20px;
+    .search__title {
+      color: rgb(173, 123, 123);
+      font-size: 25px;
+      font-weight: 400;
+    }
+  }
+}
 </style>
