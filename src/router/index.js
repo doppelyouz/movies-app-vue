@@ -8,6 +8,7 @@ import Settings from '../views/Settings'
 import User from '../views/User'
 import OneMovie from '../views/OneMovie'
 import AddMovie from '../views/AddMovie'
+import TopUpBalance from '../views/TopUpBalance'
 
 const routes = [
   {
@@ -49,6 +50,11 @@ const routes = [
     path: '/add',
     name: 'add',
     component: AddMovie
+  },
+  {
+    path: '/payment',
+    name: 'payment',
+    component: TopUpBalance
   },
   { path:  "/:catchAll(.*)", component: Netflix }
 ]

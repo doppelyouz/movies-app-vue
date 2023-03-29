@@ -1,7 +1,7 @@
 <template>
   <div>
     <Topbar />
-    <Loading v-if="isLoading"/>
+    <Loading v-if="isLoading" />
     <div class="profile" v-if="currentUser">
       <Loading v-if="isLoading" />
       <div class="profile__data" v-if="currentUser">
@@ -16,21 +16,31 @@
             </div>
             <div class="profile__email">
               <div>Email:</div>
-              <h2 class="profile__email">{{ currentUser?.email }}</h2>
+              <h2>{{ currentUser?.email }}</h2>
+            </div>
+            <div class="profile__cash">
+              <div>Cash:</div>
+              <h2>{{ currentUser?.cash }}</h2>
             </div>
           </div>
           <div class="profile__settings">
-            <router-link :to="{ name: 'settings' }"
-              ><my-button>Settings</my-button></router-link
+            <div class="profile__settings-block">
+              <router-link :to="{ name: 'settings' }"
+                ><my-button>Settings</my-button></router-link
+              >
+              <my-button @click="logOut">Log out</my-button>
+            </div>
+
+            <router-link :to="{ name: 'payment' }"
+              ><my-button>Top up balance</my-button></router-link
             >
-            <my-button @click="logOut">Log out</my-button>
           </div>
         </div>
       </div>
       <div class="tickets" v-if="items?.length > 0">
         <Movie
           v-for="ticket in items"
-          :key="ticket"
+          :key="Date.now() + ticket"
           :movie="ticket"
           :buy="false"
         />
@@ -53,7 +63,7 @@ import paginationMixin from "@/mixins/pagination.mixin";
 import _ from "lodash";
 import { mapState } from "vuex";
 import Movie from "@/components/Movie.vue";
-import Loading from '../components/Loading.vue';
+import Loading from "../components/Loading.vue";
 
 export default {
   name: "AppProfile",
@@ -61,7 +71,7 @@ export default {
     Topbar,
     Paginate,
     Movie,
-    Loading
+    Loading,
   },
   mixins: [paginationMixin],
   data() {
@@ -112,70 +122,81 @@ export default {
 </script>
 <style lang="scss" scoped>
 .profile {
-margin: 0 auto;
-max-width: 1200px;
-width: 100%;
-background: rgb(104, 86, 86);
-border-top-right-radius: 30px;
-border-top-left-radius: 30px;
-padding: 40px;
-.profile__data {
-  .profile__bio {
-    display: flex;
-    align-items: start;
-    gap: 20px;
-    margin-bottom: 55px;
-    .profile__avatar {
-      height: 300px;
-      width: 300px;
-      img {
-        border-radius: 20px;
-        object-fit: cover;
-        width: 100%;
-        height: 100%;
-      }
-    }
-    .profile__personalData {
-      padding: 15px;
+  margin: 0 auto;
+  max-width: 1200px;
+  width: 100%;
+  background: rgb(104, 86, 86);
+  border-top-right-radius: 30px;
+  border-top-left-radius: 30px;
+  padding: 40px;
+  .profile__data {
+    .profile__bio {
       display: flex;
-      flex-direction: column;
-      justify-content: start;
-      width: 40%;
+      align-items: start;
       gap: 20px;
-      align-self: start;
-      color: rgb(202, 201, 201);
-      font-size: 25px;
-      font-weight: 600;
-      .profile__name {
+      margin-bottom: 55px;
+      .profile__avatar {
+        height: 300px;
+        min-width: 300px;
+        img {
+          border-radius: 20px;
+          object-fit: cover;
+          width: 100%;
+          height: 100%;
+        }
+      }
+      .profile__personalData {
+        padding: 15px;
+        display: flex;
+        flex-direction: column;
+        justify-content: start;
+        width: 40%;
+        gap: 20px;
+        align-self: start;
+        color: rgb(202, 201, 201);
+        font-size: 25px;
+        font-weight: 600;
+        .profile__name {
+          display: flex;
+          gap: 20px;
+        }
+        .profile__email {
+          display: flex;
+          gap: 20px;
+        }
+        .profile__cash {
+          display: flex;
+          gap: 20px;
+          align-items: center;
+        }
+      }
+      .profile__settings {
         display: flex;
         gap: 20px;
+        flex-direction: column;
+        align-items: center;
+        .profile__settings-block {
+          display: flex;
+          gap: 20px;
+        }
       }
-      .profile__email {
-        display: flex;
-        gap: 20px;
-      }
-    }
-    .profile__settings {
-      display: flex;
-      gap: 20px;
     }
   }
-}
-.tickets {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  grid-template-rows: 1fr;
-  gap: 40px;
-  border-radius: 25px;
-  padding: 35px;
-  background: rgb(70, 50, 50);
-}
-.pagination {
-  display: flex;
-  gap: 30px;
-  padding: 15px;
-  align-items: center;
-  justify-content: center;
-}
+  .tickets {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr;
+    gap: 40px;
+    border-radius: 25px;
+    padding: 35px;
+    background: rgb(70, 50, 50);
+  }
+  .pagination {
+    display: flex;
+    gap: 30px;
+    padding: 15px;
+    align-items: center;
+    justify-content: center;
+  }
 }
 </style>

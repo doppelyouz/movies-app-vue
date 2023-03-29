@@ -10,11 +10,15 @@
                 </div>
                 <div class="add__input-group">
                     <div class="input-group__title">Description:</div>
-                    <my-input v-model="description"/>
+                    <textarea v-model="description" class="input-group__textarea"/>
                 </div>
                 <div class="add__input-group">
                     <div class="input-group__title">Image:</div>
                     <my-input v-model="image"/>
+                </div>
+                <div class="add__input-group">
+                    <div class="input-group__title">Price:</div>
+                    <my-input v-model="price"/>
                 </div>
                 <my-button>Добавить</my-button>
             </form>
@@ -34,7 +38,8 @@
             return {
                 name: '',
                 description: '',
-                image: ''
+                image: '',
+                price: 0
             }
         },  
         computed: {
@@ -50,7 +55,8 @@
                         description: this.description,
                         rating: [], 
                         comments: [],
-                        userId: this.currentUser.id
+                        userId: this.currentUser.id,
+                        price: Number(this.price)
                     };
 
                     this.$store.dispatch('createMovie', movie)
@@ -58,8 +64,9 @@
                     this.description = '';
                     this.name = '';
                     this.image = '';
+                    this.price = 0;
 
-                    this.$router.push({name: 'home'})
+                    this.$router.push({name: 'profile'})
         },
         mounted() {
         }
@@ -69,11 +76,12 @@
 <style lang="scss" scoped>
 .add {
     margin: 0 auto;
-    max-width: 800px;
+    max-width: 600px;
     width: 100%;
     background: rgb(82, 63, 63);
     border-radius: 25px;
-    padding: 100px;
+    padding: 40px;
+    box-sizing: border-box;
     .add__form {
         display: flex;
         flex-direction: column;
@@ -87,10 +95,17 @@
         .add__input-group {
             display: flex;
             flex-direction: column;
+            gap: 10px;
             width: 100%;
             .input-group__title {
-                font-size: 25px;
+                font-size: 20px;
                 color: rgb(255, 255, 255);
+            }
+            .input-group__textarea {
+                height: 100px;
+                background: inherit;
+                border: 1px solid rgb(173, 172, 172);
+                border-radius: 15px;
             }
         }
     }

@@ -24,7 +24,7 @@
       <div class="tickets" v-if="items?.length > 0">
         <Movie
           v-for="ticket in items"
-          :key="ticket"
+          :key='Date.now()+ticket'
           :movie="ticket"
           :buy="false"
           :userPage="true"
@@ -77,8 +77,8 @@ export default {
     tickets() {
       let tickets = [];
       this.movies?.forEach((movie) => {
-        this.user.tickets?.forEach((userTicket) => {
-          if (userTicket === movie.id) {
+        this.user?.tickets?.forEach((userTicket) => {
+          if (userTicket === movie?.id) {
             tickets.push(movie);
           }
         });

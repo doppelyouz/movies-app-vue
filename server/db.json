@@ -1,17 +1,18 @@
 {
   "users": [
     {
-      "username": "1111111111111111",
+      "username": "1",
       "email": "1",
       "password": "1",
       "avatar": "https://bogdo.studio/assets/images/resources/69/502.jpg",
       "tickets": [
         4,
-        15,
-        13,
-        17
+        9,
+        9,
+        9
       ],
-      "id": 1
+      "id": 1,
+      "cash": 27500
     },
     {
       "username": "222222222222222",
@@ -19,11 +20,12 @@
       "password": "2",
       "avatar": "https://sbcf.fr/wp-content/uploads/2018/03/sbcf-default-avatar.png",
       "tickets": [
-        2,
-        3,
+        1,
+        1,
         5
       ],
-      "id": 2
+      "id": 2,
+      "cash": 0
     },
     {
       "username": "3333333333333",
@@ -34,7 +36,8 @@
         5,
         16
       ],
-      "id": 3
+      "id": 3,
+      "cash": 0
     },
     {
       "username": "6",
@@ -42,7 +45,8 @@
       "password": "6",
       "avatar": "https://sbcf.fr/wp-content/uploads/2018/03/sbcf-default-avatar.png",
       "tickets": [],
-      "id": 4
+      "id": 4,
+      "cash": 0
     }
   ],
   "movies": [
@@ -72,7 +76,8 @@
           },
           "description": "yjkuyku yjkuykuyjkuykuyjkuykuyjkuyku yjkuyku yjkuykuyjkuykuyjkuyku yjkuykuyjkuykuyjkuyku"
         }
-      ]
+      ],
+      "price": 2000
     },
     {
       "id": 2,
@@ -98,7 +103,8 @@
           },
           "description": "ytjutyjyt"
         }
-      ]
+      ],
+      "price": 2000
     },
     {
       "id": 3,
@@ -123,7 +129,8 @@
           },
           "description": "44"
         }
-      ]
+      ],
+      "price": 2000
     },
     {
       "id": 4,
@@ -155,15 +162,28 @@
           },
           "description": "few"
         }
-      ]
+      ],
+      "price": 2000
     },
     {
       "id": 5,
       "image": "https://s5.afisha.ru/mediastorage/37/3b/aa04c6f9190c43d5a895d8ed3b37.jpg",
       "name": "Все везде и сразу",
       "description": "There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text. All the Lorem Ipsum generators on the Internet tend to repeat predefined chunks as necessary.",
-      "rating": [],
-      "comments": []
+      "rating": [
+        5.2
+      ],
+      "comments": [
+        {
+          "user": {
+            "id": 1,
+            "username": "1111111111111111",
+            "avatar": "https://bogdo.studio/assets/images/resources/69/502.jpg"
+          },
+          "description": "hgf"
+        }
+      ],
+      "price": 2000
     },
     {
       "id": 6,
@@ -212,7 +232,8 @@
           },
           "description": "fwfewfwfewfwfewfwfewfwfewfwfewfwfewfwfewfwfewfwfewfwfewfwfewfwfewfwfewfwfewfwfewfwfewfwfewfwfewfwfewfwfewfwfewfwfewfwfewfwfewfwfewfwfewfwfewfwfewfwfewfwfewfwfewfwfewfwfewfwfewfwfew"
         }
-      ]
+      ],
+      "price": 2000
     },
     {
       "id": 7,
@@ -220,7 +241,8 @@
       "name": "Дора",
       "description": "There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text. All the Lorem Ipsum generators on the Internet tend to repeat predefined chunks as necessary.",
       "rating": [],
-      "comments": []
+      "comments": [],
+      "price": 1000
     },
     {
       "id": 8,
@@ -237,7 +259,8 @@
           },
           "description": "htsdr"
         }
-      ]
+      ],
+      "price": 1500
     },
     {
       "id": 9,
@@ -254,7 +277,8 @@
           },
           "description": "uy"
         }
-      ]
+      ],
+      "price": 3000
     },
     {
       "image": "https://s0.rbk.ru/v6_top_pics/media/img/4/74/756256715374744.jpg",
@@ -271,7 +295,8 @@
           "description": "fewfew"
         }
       ],
-      "id": 10
+      "id": 10,
+      "price": 4500
     },
     {
       "image": "https://cdnn21.img.ria.ru/images/07e7/01/12/1845661229_0:0:2730:2048_600x0_80_0_1_030c6c456c728031d4cc115221fbf780.jpg",
@@ -286,7 +311,8 @@
       ],
       "comments": [],
       "userId": 1,
-      "id": 13
+      "id": 13,
+      "price": 1500
     },
     {
       "image": "https://static-cse.canva.com/blob/846900/photo1502082553048f009c37129b9e1583341920812.jpeg",
@@ -295,7 +321,8 @@
       "rating": 0,
       "comments": [],
       "userId": 2,
-      "id": 15
+      "id": 15,
+      "price": 1300
     },
     {
       "image": "https://www.5.ua/media/pictures/original/194292.jpg?t=1600087834",
@@ -313,7 +340,8 @@
         }
       ],
       "userId": 2,
-      "id": 16
+      "id": 16,
+      "price": 1600
     },
     {
       "image": "https://media.istockphoto.com/id/537373196/photo/trees-forming-a-heart.jpg?s=612x612&w=0&k=20&c=onZKNjkycICe4q2ZDnKi39z42Ax9tpZT7pph-2e5Seo=",
@@ -326,7 +354,28 @@
       ],
       "comments": [],
       "userId": 1,
-      "id": 17
+      "id": 17,
+      "price": 1700
+    },
+    {
+      "image": "https://wikiway.com/upload/uf/2ce/gruzia_1.jpg",
+      "name": "33333",
+      "description": "333",
+      "rating": [],
+      "comments": [],
+      "userId": 1,
+      "price": 1200,
+      "id": 18
+    },
+    {
+      "image": "https://cdn.pixabay.com/photo/2013/07/18/20/26/sea-164989__480.jpg",
+      "name": "dsfsdfdsfs",
+      "description": "dfsfdsfdsfdsf",
+      "rating": [],
+      "comments": [],
+      "userId": 1,
+      "price": 1000,
+      "id": 19
     }
   ]
 }

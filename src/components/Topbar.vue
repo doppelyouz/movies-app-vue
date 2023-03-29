@@ -14,8 +14,13 @@
         <div class="topbar__profile-logo">
           <img :src="currentUser.avatar" alt="" />
         </div>
-        <div class="topbar__profile-username">
-          {{ currentUser.username }}
+        <div class="topbar__profile-info">
+          <div class="topbar__profile-username">
+            {{ currentUser.username }}
+          </div>
+          <div class="topbar__profile-cash">
+            Cash: {{ currentUser.cash }}
+          </div>
         </div>
       </router-link>
     </template>
@@ -85,9 +90,14 @@ export default {
         height: 100%;
       }
     }
-    .topbar__profile-username {
-      color: white;
-      font-size: 20px;
+    .topbar__profile-info {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      .topbar__profile-username {
+        color: white;
+        font-size: 20px;
+      }
     }
   }
   .register__button {
