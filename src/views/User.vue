@@ -14,10 +14,6 @@
               <div>Username:</div>
               <h2>{{ user?.username }}</h2>
             </div>
-            <div class="profile__email">
-              <div>Email:</div>
-              <h2 class="profile__email">{{ user?.email }}</h2>
-            </div>
           </div>
         </div>
       </div>

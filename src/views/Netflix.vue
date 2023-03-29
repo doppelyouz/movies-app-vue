@@ -1,6 +1,7 @@
 <template>
-  <div class="wrapper">
+  <div>
     <Topbar />
+    <div class="wrapper">
     <div class="search">
       <h1 class="search__title">Search: </h1>
       <my-input type="search" v-model="search"/>
@@ -18,6 +19,7 @@
         :page-class="'pagination-item'"
         v-if="items"
       />
+    </div>
   </div>
 </template>
 <script>
@@ -67,11 +69,11 @@ export default {
 </script>
 <style lang="scss" scoped>
 .wrapper {
-  padding: 35px;
+  padding: 25px;
 .movies {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
-  gap: 40px;
+  gap: 50px;
 }
   .pagination {
     display: flex;

@@ -106,6 +106,8 @@
                 background: inherit;
                 border: 1px solid rgb(173, 172, 172);
                 border-radius: 15px;
+                padding: 15px;
+                color: white;
             }
         }
     }

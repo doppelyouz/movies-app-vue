@@ -7,12 +7,10 @@
       "avatar": "https://bogdo.studio/assets/images/resources/69/502.jpg",
       "tickets": [
         4,
-        9,
-        9,
-        9
+        19
       ],
       "id": 1,
-      "cash": 27500
+      "cash": 35500
     },
     {
       "username": "222222222222222",
@@ -47,6 +45,32 @@
       "tickets": [],
       "id": 4,
       "cash": 0
+    },
+    {
+      "username": "777777777777777777",
+      "email": "7",
+      "password": "7",
+      "avatar": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRJl-hmG52l6dYaVwoH5gU3eYd9dCs9Di8o-c86mq3Q3tiw3JR38_jfDdbys_2ag2_Zz0Y&usqp=CAU",
+      "tickets": [
+        19
+      ],
+      "cash": 13000,
+      "id": 5
+    },
+    {
+      "username": "1000000000000",
+      "email": "10",
+      "password": "10",
+      "avatar": "https://www.interfax.ru/ftproot/photos/photostory/2021/06/11/week4_1100.jpg",
+      "tickets": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "cash": 20000,
+      "id": 6
     }
   ],
   "movies": [
@@ -57,7 +81,9 @@
       "description": "Избушка на курьих ножках посреди Москвы. Кощей и Колобок на мотоцикле. Жар-птица с лицом эстрадной звезды. Что происходит? Сказочное Белогорье врывается в наш мир в третьей части весёлого и зрелищного фэнтези для всей семьи. Зрителей ждёт новое масштабное приключение в компании Виктора Хориняка, Константина Лавроненко, Сергея Бурунова, Тимофея Трибунцева и других звёзд российского кино.",
       "rating": [
         5.6,
-        7
+        7,
+        8.4,
+        2.2
       ],
       "comments": [
         {
@@ -75,6 +101,22 @@
             "avatar": "https://sbcf.fr/wp-content/uploads/2018/03/sbcf-default-avatar.png"
           },
           "description": "yjkuyku yjkuykuyjkuykuyjkuykuyjkuyku yjkuyku yjkuykuyjkuykuyjkuyku yjkuykuyjkuykuyjkuyku"
+        },
+        {
+          "user": {
+            "id": 6,
+            "username": "10",
+            "avatar": "https://sbcf.fr/wp-content/uploads/2018/03/sbcf-default-avatar.png"
+          },
+          "description": "пыукпукп"
+        },
+        {
+          "user": {
+            "id": 1,
+            "username": "1",
+            "avatar": "https://bogdo.studio/assets/images/resources/69/502.jpg"
+          },
+          "description": "strt"
         }
       ],
       "price": 2000
@@ -111,7 +153,9 @@
       "image": "https://thumbs.dfs.ivi.ru/storage26/contents/5/c/21c7c18bfe111e6e0ab01b43121f2c.jpg",
       "name": "Либерея",
       "description": "Трио авантюристов отправляются в путешествие по всей России на поиски легендарной библиотеки Ивана Грозного. Чтобы совершить находку века, им нужно разгадать россыпь загадок и переиграть коварных конкурентов. Захватывающий приключенческий квест с лихим экшеном, юмором, необычными локациями и звёздной актёрской командой: Тихон Жизневский, Алексей Серебряков и Диана Пожарская vs Артём Ткаченко.",
-      "rating": [],
+      "rating": [
+        7.4
+      ],
       "comments": [
         {
           "user": {
@@ -128,6 +172,14 @@
             "avatar": "https://s0.tchkcdn.com/g-mc6tg-noHZsP7M50PIm7nw/17/261238/540x540/r/0/afb_4a7c281_dyka_pryroda_buket.jpg"
           },
           "description": "44"
+        },
+        {
+          "user": {
+            "id": 5,
+            "username": "777777777777777777",
+            "avatar": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRJl-hmG52l6dYaVwoH5gU3eYd9dCs9Di8o-c86mq3Q3tiw3JR38_jfDdbys_2ag2_Zz0Y&usqp=CAU"
+          },
+          "description": "edfaefw"
         }
       ],
       "price": 2000
@@ -366,16 +418,6 @@
       "userId": 1,
       "price": 1200,
       "id": 18
-    },
-    {
-      "image": "https://cdn.pixabay.com/photo/2013/07/18/20/26/sea-164989__480.jpg",
-      "name": "dsfsdfdsfs",
-      "description": "dfsfdsfdsfdsf",
-      "rating": [],
-      "comments": [],
-      "userId": 1,
-      "price": 1000,
-      "id": 19
     }
   ]
 }

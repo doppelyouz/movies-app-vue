@@ -86,6 +86,7 @@ export default {
               ...this.currentUser,
               cash: this.currentUser?.cash + Number(this.money)
           });
+          this.$router.push({name: 'home'})
         }
     }
   }

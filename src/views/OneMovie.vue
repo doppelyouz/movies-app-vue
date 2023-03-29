@@ -146,7 +146,7 @@
       },
       onDelete() { 
         this.$store.dispatch("deleteMovie", this.movie?.id);
-        this.$router.push({name: 'home'});
+        this.$router.push({name: 'profile'});
       },
       onEdit() {
           this.newName = this.newName === '' ? this.movie?.name : this.newName; 

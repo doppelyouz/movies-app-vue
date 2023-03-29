@@ -51,7 +51,8 @@ export default {
                     email: this.email,
                     password: this.password,
                     avatar: "https://sbcf.fr/wp-content/uploads/2018/03/sbcf-default-avatar.png",
-                    tickets: []
+                    tickets: [],
+                    cash: 0
                 };
 
                 this.$store.dispatch('register', user)
